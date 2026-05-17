@@ -3,427 +3,530 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
 <title>Aashray Raj Mathur — Senior Product Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-:root{
-  --bg:#0d1117;--bg2:#161b22;--bg3:#1c2333;
-  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);
-  --text:#cdd5e0;--text2:#768390;--text3:#4d5566;--white:#e6edf3;
-  --teal:#3d9e94;--teal2:#5bbfb5;--warm:#9b7fa3;
-  --serif:'Lora',Georgia,serif;
-  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+:root { color-scheme: dark only; }
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: #060608 !important; }
+:root {
+  --bg: #060608; --bg2: #0d0f14; --bg3: #111318;
+  --border: rgba(255,255,255,0.05); --border2: rgba(255,255,255,0.1);
+  --text: #e6edf3; --text2: #6e7681; --text3: #30363d;
+  --teal: #3d9e94; --teal2: #5bbfb5;
+  --gold: #c9a96e; --gold2: #e8c97e;
+  --max: 960px; --font: 'Manrope', sans-serif;
 }
-body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7}
+body { font-family: var(--font); background: var(--bg) !important; color: var(--text); overflow-x: hidden; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
 
 /* BLOBS */
-.blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.blob{position:absolute;border-radius:40% 60% 70% 30%/40% 50% 60% 50%;filter:blur(60px);opacity:.16}
-.blob-a{width:480px;height:480px;background:radial-gradient(circle,#3d9e94,#2a7a72);top:-120px;left:-150px;animation:bm 9s ease-in-out infinite}
-.blob-b{width:360px;height:360px;background:radial-gradient(circle,#9b7fa3,#7a5a85);bottom:60px;right:-80px;animation:bm 11s ease-in-out infinite reverse;animation-delay:-3s}
-.blob-c{width:260px;height:260px;background:radial-gradient(circle,#4a8fa0,#2d6e80);bottom:40%;left:8%;animation:bm 14s ease-in-out infinite;animation-delay:-6s}
-@keyframes bm{
-  0%,100%{border-radius:40% 60% 70% 30%/40% 50% 60% 50%;transform:translate(0,0) scale(1)}
-  33%{border-radius:70% 30% 55% 45%/60% 35% 65% 40%;transform:translate(25px,-40px) scale(1.07)}
-  66%{border-radius:55% 45% 35% 65%/35% 70% 30% 70%;transform:translate(-15px,30px) scale(0.94)}
-}
+.blobs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.08; }
+.blob-1 { width: 600px; height: 600px; background: radial-gradient(circle, #3d9e94, #1a5e58); top: -150px; left: -150px; animation: bm1 9s ease-in-out infinite alternate; }
+.blob-2 { width: 450px; height: 450px; background: radial-gradient(circle, #9b7fa3, #5c3a6b); bottom: -100px; right: -100px; animation: bm2 11s ease-in-out infinite alternate-reverse; }
+.blob-3 { width: 320px; height: 320px; background: radial-gradient(circle, #2a7fbf, #1a4a6e); top: 40%; left: -80px; animation: bm3 14s ease-in-out infinite alternate; }
+@keyframes bm1 { 0% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; transform: translate(0,0) scale(1); } 50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; transform: translate(30px,40px) scale(1.08); } 100% { border-radius: 50% 50% 40% 60%/30% 70% 60% 40%; transform: translate(-20px,20px) scale(0.95); } }
+@keyframes bm2 { 0% { border-radius: 40% 60% 60% 40%/70% 30% 70% 30%; transform: translate(0,0) scale(1); } 50% { border-radius: 70% 30% 40% 60%/40% 70% 30% 60%; transform: translate(-40px,-30px) scale(1.1); } 100% { border-radius: 50% 50% 60% 40%/60% 40% 50% 50%; transform: translate(20px,-20px) scale(0.92); } }
+@keyframes bm3 { 0% { border-radius: 60% 40% 50% 50%/40% 60% 40% 60%; transform: translate(0,0) scale(1); } 50% { border-radius: 40% 60% 30% 70%/60% 40% 70% 30%; transform: translate(40px,60px) scale(1.12); } 100% { border-radius: 50% 50% 60% 40%/50% 50% 40% 60%; transform: translate(-10px,30px) scale(0.98); } }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(13,17,23,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:var(--serif);font-size:20px;color:var(--white);text-decoration:none;font-weight:700;letter-spacing:-.5px}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--teal2)}
-.nav-cta{background:var(--teal)!important;color:var(--bg)!important;padding:9px 22px!important;border-radius:8px!important;font-weight:600!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{width:22px;height:2px;background:var(--text2);border-radius:2px;transition:.3s}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,6,8,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; display: flex; align-items: center; }
+.nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 48px; width: 100%; display: flex; align-items: center; justify-content: flex-end; }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--text2); transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { background: var(--teal); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: background 0.2s; }
+.nav-cta:hover { background: var(--teal2); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+.mobile-nav { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(6,6,8,0.98); backdrop-filter: blur(24px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { font-size: 28px; font-weight: 700; color: var(--text2); }
+.mobile-nav-close { position: absolute; top: 20px; right: 24px; font-size: 32px; color: var(--text2); cursor: pointer; background: none; border: none; font-family: inherit; }
 
 /* HERO */
-.hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px}
-.hero-inner{max-width:740px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(61,158,148,.1);border:1px solid rgba(61,158,148,.3);color:var(--teal2);padding:7px 18px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:32px}
-.badge-pulse{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-.hero h1{font-family:var(--serif);font-size:clamp(38px,7vw,70px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:var(--white);margin-bottom:24px}
-.hero h1 em{font-style:italic;color:var(--teal2)}
-.hero-sub{font-size:clamp(15px,2vw,17px);color:var(--text2);max-width:540px;margin:0 auto 40px;line-height:1.75;font-weight:300}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-solid{background:var(--white);color:var(--bg);padding:13px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-block}
-.btn-solid:hover{background:#c9d1d9;transform:translateY(-1px)}
-.btn-ghost{background:transparent;color:var(--text);padding:13px 28px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--border2);transition:all .2s;display:inline-block}
-.btn-ghost:hover{border-color:rgba(255,255,255,.25);color:var(--white)}
+#hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 24px 80px; }
+.hero-inner { max-width: 760px; margin: 0 auto; }
+.hero-greeting { font-size: 17px; font-weight: 600; color: #ffffff; margin-bottom: 16px; letter-spacing: 0.3px; }
+.hero-h1 { font-family: var(--font); font-size: clamp(40px, 7vw, 72px); font-weight: 800; letter-spacing: -2px; line-height: 1.1; color: var(--text); margin-bottom: 24px; }
+.hero-h1 em { font-style: italic; color: var(--teal2); }
+.hero-sub { font-size: 17px; font-weight: 400; line-height: 1.75; color: var(--text2); max-width: 560px; margin: 0 auto 40px; }
+.btn-primary { display: inline-block; background: var(--text); color: var(--bg); font-size: 15px; font-weight: 700; padding: 15px 32px; border-radius: 10px; transition: transform 0.2s, box-shadow 0.2s; font-family: var(--font); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
 
 /* TOOLS STRIP */
-.tools-strip{position:relative;z-index:1;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 48px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;background:rgba(22,27,34,.4)}
-.strip-label{font-size:11px;color:var(--text3);letter-spacing:1px;text-transform:uppercase}
-.strip-item{font-size:12px;color:var(--text3);font-weight:500;cursor:default;transition:color .2s}
-.strip-item:hover{color:var(--text2)}
+.tools-strip { position: relative; z-index: 1; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(13,15,20,0.6); padding: 20px 48px; }
+.tools-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.tools-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); white-space: nowrap; }
+.tools-pills { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.tool-pill { font-size: 13px; font-weight: 600; color: var(--text2); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 6px 16px; transition: all 0.2s; }
+.tool-pill:hover { color: var(--text); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.08); }
 
 /* SECTION */
-.section{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:90px 48px}
-.sec-label{display:flex;align-items:center;gap:10px;margin-bottom:36px}
-.sec-dot{width:8px;height:8px;background:var(--teal);border-radius:50%}
-.sec-title{font-family:var(--serif);font-size:24px;color:var(--white);font-weight:600}
+.section { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 100px 48px; }
+.section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 48px; }
+.section-dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
+.section-title { font-size: 28px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
 
 /* WORK CARDS */
-.work-grid{display:flex;flex-direction:column;gap:20px}
-.work-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer}
-.work-card:hover{border-color:var(--border2);transform:translateY(-3px)}
-.wc-left{padding:36px;display:flex;flex-direction:column;gap:16px;justify-content:space-between}
-.wc-tag{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);font-weight:600}
-.wc-title{font-family:var(--serif);font-size:clamp(18px,2.2vw,24px);color:var(--white);line-height:1.25;font-weight:700;letter-spacing:-.3px}
-.wc-desc{font-size:13px;color:var(--text2);line-height:1.7;font-weight:300}
-.wc-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.mv{font-family:var(--serif);font-size:26px;color:var(--white);letter-spacing:-1px;line-height:1}
-.ml{font-size:11px;color:var(--text2);margin-top:4px;line-height:1.4}
-.wc-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid var(--border2);color:var(--white);padding:10px 18px;border-radius:8px;font-size:12px;font-weight:500;width:fit-content;transition:all .2s;cursor:pointer;text-decoration:none}
-.wc-btn:hover{background:rgba(255,255,255,.1)}
-.wc-btn-off{opacity:.3;pointer-events:none}
-.wc-right{background:var(--bg3);border-left:1px solid var(--border);display:flex;flex-direction:column}
-.wc-img{flex:1;min-height:240px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.wc-img img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:opacity .3s}
-.work-card:hover .wc-img img{opacity:1}
+.work-grid { display: flex; flex-direction: column; gap: 20px; }
+.work-card {
+  background: linear-gradient(135deg, #1e1608 0%, #171208 40%, #0f1208 100%);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 20px; padding: 44px;
+  transition: border-color 0.3s, transform 0.3s;
+  cursor: pointer; position: relative; overflow: hidden;
+}
+.work-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top left, rgba(201,169,110,0.07) 0%, transparent 60%); pointer-events: none; }
+.work-card:hover { border-color: rgba(201,169,110,0.4); transform: translateY(-4px); }
+.card-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(201,169,110,0.6); margin-bottom: 16px; }
+.card-h3 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.5px; }
+.card-desc { font-size: 15px; font-weight: 400; line-height: 1.75; color: var(--text2); margin-bottom: 32px; max-width: 640px; }
+.card-metrics { display: flex; gap: 48px; margin-bottom: 32px; flex-wrap: wrap; }
+.metric-num { font-size: clamp(44px, 6vw, 64px); font-weight: 800; color: var(--gold); line-height: 1; letter-spacing: -2px; display: block; }
+.metric-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(201,169,110,0.6); margin-top: 6px; display: block; }
+.card-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--gold); border: 1px solid rgba(201,169,110,0.3); border-radius: 100px; padding: 10px 22px; transition: all 0.2s; }
+.card-cta:hover { border-color: var(--gold); background: rgba(201,169,110,0.08); }
 
-/* ABOUT TEXT */
-.about-wrap{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:60px 48px;text-align:center}
-.about-prose{font-size:clamp(15px,2vw,18px);color:var(--text2);line-height:1.95;font-weight:300}
-.pill{display:inline-flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid var(--border2);border-radius:100px;padding:2px 12px;color:var(--white);font-size:.9em;font-weight:500}
-.pill-t{background:rgba(61,158,148,.08);border-color:rgba(61,158,148,.2);color:var(--teal2)}
+/* STATEMENT SCROLL FILL */
+.statement-break { position: relative; z-index: 1; padding: 100px 48px; overflow: hidden; text-align: center; }
+.statement-fill-wrap { display: inline-block; text-align: left; }
+.statement-line { position: relative; display: block; overflow: hidden; }
+.statement-line-text {
+  font-size: clamp(32px, 5.5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  line-height: 1.15;
+  color: rgba(255,255,255,0.05);
+  display: block;
+  white-space: nowrap;
+}
+.statement-line-fill {
+  position: absolute;
+  inset: 0;
+  font-size: clamp(32px, 5.5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  line-height: 1.15;
+  background: linear-gradient(135deg, var(--text) 0%, var(--teal2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+.statement-line.animate .statement-line-fill { clip-path: inset(0 0% 0 0); }
 
-/* DISCIPLINES */
-.discs{border-top:1px solid var(--border)}
-.disc-row{display:flex;align-items:baseline;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border);gap:32px}
-.disc-name{font-family:var(--serif);font-size:19px;color:var(--white);font-weight:600;min-width:110px}
-.disc-tags{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-.disc-tag{font-size:12px;color:var(--text2);font-weight:300}
+/* MINDMAP WHAT I DO */
+.mindmap-section { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 60px 48px 100px; }
+.mindmap-canvas { position: relative; width: 100%; height: 560px; }
+.mindmap-canvas-mobile { display: none; }
+.mindmap-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.mindmap-center {
+  position: absolute; z-index: 3;
+  background: linear-gradient(135deg, rgba(61,158,148,0.18), rgba(91,191,181,0.1));
+  border: 1.5px solid rgba(61,158,148,0.5);
+  border-radius: 14px;
+  padding: 16px 26px;
+  font-size: 17px; font-weight: 800; color: var(--text);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 48px rgba(61,158,148,0.12), inset 0 1px 0 rgba(255,255,255,0.06);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  left: 50%; top: 50%;
+}
+.mindmap-node {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px;
+}
+.node-label {
+  font-size: 13px; font-weight: 700; color: var(--text);
+  background: rgba(13,15,20,0.92);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 9px 16px;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  display: flex; align-items: center; gap: 7px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  position: relative; z-index: 3;
+}
+.node-icon { font-size: 14px; }
+.node-tags { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; max-width: 180px; position: relative; z-index: 3; }
+.node-tag {
+  font-size: 10px; font-weight: 500; color: var(--text2);
+  background: rgba(13,15,20,0.92);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px; padding: 3px 9px;
+  white-space: nowrap;
+}
+
+/* Mindmap mobile - scrollable horizontal chips */
+.mindmap-mobile { display: none; }
+.mm-mobile-grid { display: flex; flex-direction: column; gap: 16px; }
+.mm-mobile-item { display: flex; flex-direction: column; gap: 8px; }
+.mm-mobile-label { font-size: 15px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.mm-mobile-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.mm-mobile-tag { font-size: 11px; font-weight: 500; color: var(--text2); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; padding: 4px 12px; }
 
 /* SKILLS */
-.skills-grid{display:flex;flex-wrap:wrap;gap:8px}
-.sk{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-size:12px;color:var(--text);transition:all .2s;cursor:default}
-.sk:hover{background:rgba(255,255,255,.07);border-color:var(--border2);color:var(--white)}
+.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-pill { background: linear-gradient(135deg, rgba(61,158,148,0.12), rgba(91,191,181,0.06)); border: 1px solid rgba(61,158,148,0.2); border-radius: 100px; padding: 8px 18px; font-size: 12px; font-weight: 600; color: var(--teal2); transition: all 0.2s; cursor: default; }
+.skill-pill:hover { background: linear-gradient(135deg, rgba(61,158,148,0.22), rgba(91,191,181,0.12)); border-color: rgba(61,158,148,0.4); color: #7dd4cc; }
 
 /* EXPERIENCE */
-.exp-row{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--border);gap:20px}
-.exp-row:first-child{border-top:1px solid var(--border)}
-.exp-role{font-size:13px;color:var(--text);font-weight:400}
-.exp-right{text-align:right;flex-shrink:0}
-.exp-co{font-size:13px;color:var(--white);font-weight:500}
-.exp-dt{font-size:11px;color:var(--text2);margin-top:2px}
-
-/* PROOF */
-.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.proof-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:26px 22px;text-align:center}
-.proof-name{font-size:11px;font-weight:600;color:var(--white);margin-bottom:10px;letter-spacing:.3px}
-.proof-q{font-size:12px;color:var(--text2);line-height:1.65;font-style:italic;font-weight:300}
+.exp-item { padding: 28px 0; border-bottom: 1px solid var(--border); }
+.exp-item:first-child { border-top: 1px solid var(--border); }
+.exp-role { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 6px; letter-spacing: -0.3px; }
+.exp-company { font-size: 14px; font-weight: 600; color: var(--teal2); margin-bottom: 4px; }
+.exp-date { font-size: 12px; font-weight: 500; color: var(--text3); }
+.exp-note { font-size: 13px; font-weight: 400; color: var(--text2); margin-top: 8px; line-height: 1.6; font-style: italic; }
 
 /* FAQ */
-details{border-bottom:1px solid var(--border)}
-details:first-of-type{border-top:1px solid var(--border)}
-summary{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-size:13px;color:var(--text);font-weight:400;list-style:none;gap:20px;transition:color .2s}
-summary::-webkit-details-marker{display:none}
-summary:hover{color:var(--white)}
-.faq-icon{width:26px;height:26px;flex-shrink:0;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--text2);transition:transform .3s}
-details[open] .faq-icon{transform:rotate(45deg)}
-.faq-body{font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;padding-bottom:20px;max-width:660px}
+.faq-list { border-top: 1px solid var(--border); }
+details { border-bottom: 1px solid var(--border); }
+summary { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer; font-size: 16px; font-weight: 600; color: var(--text); list-style: none; gap: 16px; transition: color 0.2s; }
+summary::-webkit-details-marker { display: none; }
+summary:hover { color: var(--teal2); }
+.faq-icon { font-size: 22px; font-weight: 300; color: var(--teal); flex-shrink: 0; transition: transform 0.3s; line-height: 1; }
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-body { font-size: 14px; font-weight: 400; line-height: 1.85; color: var(--text2); padding-bottom: 22px; max-width: 680px; }
 
 /* CTA */
-.cta-wrap{position:relative;z-index:1;padding:0 48px 80px;max-width:900px;margin:0 auto}
-.cta-box{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:64px 48px;text-align:center}
-.cta-title{font-family:var(--serif);font-size:clamp(26px,4vw,40px);color:var(--white);font-weight:700;letter-spacing:-1px;line-height:1.2;margin-bottom:14px}
-.cta-sub{font-size:13px;color:var(--text2);margin-bottom:28px;font-weight:300}
+.cta-wrap { position: relative; z-index: 1; padding: 0 48px 120px; max-width: var(--max); margin: 0 auto; }
+.cta-card { background: linear-gradient(135deg, #2a1f0e 0%, #1e1a0e 50%, #1a2010 100%); border: 1px solid rgba(201,169,110,0.25); border-radius: 24px; padding: 80px 48px; text-align: center; position: relative; overflow: hidden; }
+.cta-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center top, rgba(201,169,110,0.12) 0%, transparent 70%); pointer-events: none; }
+.cta-h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 14px; color: var(--text); }
+.cta-sub { font-size: 14px; color: var(--text2); margin-bottom: 32px; font-weight: 400; }
+.btn-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: #1a1200; font-size: 15px; font-weight: 800; padding: 15px 36px; border-radius: 10px; transition: transform 0.2s, box-shadow 0.2s; font-family: var(--font); }
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,169,110,0.3); }
 
 /* FOOTER */
-footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.footer-copy{font-size:12px;color:var(--text2)}
-.footer-links{display:flex;gap:24px}
-.footer-links a{font-size:12px;color:var(--text2);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--white)}
+footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 32px 48px; max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-copy { font-size: 12px; color: var(--text3); font-weight: 500; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 12px; color: var(--text2); font-weight: 500; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
 
 /* CASE STUDY PAGES */
-.cs-page{display:none}
-.cs-page.active{display:block}
-.cs-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(13,17,23,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.cs-back{display:flex;align-items:center;gap:8px;color:var(--text2);text-decoration:none;font-size:13px;transition:color .2s;cursor:pointer}
-.cs-back:hover{color:var(--white)}
-.cs-hero{padding:140px 48px 56px;max-width:880px;margin:0 auto;position:relative;z-index:1}
-.cs-tag{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--teal);font-weight:600;margin-bottom:18px;display:block}
-.cs-title{font-family:var(--serif);font-size:clamp(30px,5vw,52px);font-weight:700;line-height:1.1;color:var(--white);letter-spacing:-1px;margin-bottom:22px}
-.cs-subtitle{font-size:15px;color:var(--text2);line-height:1.75;max-width:620px;font-weight:300}
-.cs-img-hero{max-width:880px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
-.cs-img-box{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;background:var(--bg3)}
-.cs-img-box img{width:100%;height:100%;object-fit:cover}
-.cs-meta{max-width:880px;margin:0 auto;padding:52px 48px;display:grid;grid-template-columns:180px 1fr;gap:52px;align-items:start;position:relative;z-index:1}
-.meta-col{display:flex;flex-direction:column;gap:18px}
-.meta-item label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text2);font-weight:600;display:block;margin-bottom:4px}
-.meta-item span{font-size:13px;color:var(--text)}
-.cr-col{display:flex;flex-direction:column;gap:32px}
-.cr-block h3{font-family:var(--serif);font-size:22px;color:var(--white);font-weight:700;margin-bottom:12px;letter-spacing:-.3px}
-.cr-block p{font-size:13px;color:var(--text2);line-height:1.8;font-weight:300}
-.cs-metrics{max-width:880px;margin:0 auto;padding:0 48px 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;position:relative;z-index:1}
-.cs-metric{background:var(--bg2);border:1px solid var(--border);padding:26px 22px}
-.cs-metric:first-child{border-radius:12px 0 0 12px}
-.cs-metric:last-child{border-radius:0 12px 12px 0}
-.cs-mv{font-family:var(--serif);font-size:36px;color:var(--white);letter-spacing:-2px;line-height:1;margin-bottom:7px}
-.cs-md{color:var(--teal);font-size:16px}
-.cs-ml{font-size:12px;color:var(--text2);line-height:1.4;font-weight:300}
-.cs-body{max-width:880px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
-.cs-sec{margin-bottom:52px}
-.cs-sec h2{font-family:var(--serif);font-size:26px;color:var(--white);font-weight:700;margin-bottom:22px;letter-spacing:-.3px}
-.cs-sec p{font-size:13px;color:var(--text2);line-height:1.85;font-weight:300;margin-bottom:14px}
-.cs-sec p:last-child{margin-bottom:0}
-.ps-list{display:flex;flex-direction:column;gap:24px}
-.ps{border-left:2px solid var(--teal);padding-left:20px}
-.ps h4{font-size:13px;font-weight:600;color:var(--white);margin-bottom:7px}
-.ps p{font-size:13px;color:var(--text2);line-height:1.8;font-weight:300;margin:0}
-.hq{background:var(--bg3);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:18px 22px;margin:22px 0;font-size:13px;color:var(--text);line-height:1.7;font-style:italic;font-weight:300}
-.cs-imgs{max-width:880px;margin:0 auto;padding:0 48px 52px;display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative;z-index:1}
-.cs-img{background:var(--bg3);border:1px solid var(--border);border-radius:12px;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.cs-img img{width:100%;height:100%;object-fit:cover}
-.cs-stack{max-width:880px;margin:0 auto;padding:0 48px 52px;position:relative;z-index:1}
-.cs-stack h2{font-family:var(--serif);font-size:26px;color:var(--white);font-weight:700;margin-bottom:18px;letter-spacing:-.3px}
-.sp-list{display:flex;flex-wrap:wrap;gap:8px}
-.sp{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:12px;color:var(--text)}
-.cs-reflect{max-width:880px;margin:0 auto;padding:0 48px 80px;position:relative;z-index:1}
-.rb{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:40px}
-.rb h2{font-family:var(--serif);font-size:20px;color:var(--white);font-weight:700;margin-bottom:14px}
-.rb p{font-size:13px;color:var(--text2);line-height:1.85;font-weight:300}
-.cs-cta{max-width:880px;margin:0 auto;padding:0 48px 80px;position:relative;z-index:1}
-.cs-cta-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:52px 40px;text-align:center}
-.cs-cta-box h2{font-family:var(--serif);font-size:28px;color:var(--white);font-weight:700;letter-spacing:-1px;margin-bottom:10px}
-.cs-cta-box p{font-size:13px;color:var(--text2);margin-bottom:24px;font-weight:300}
+.cs-page { display: none; }
+.cs-page.active { display: block; }
+.cs-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,6,8,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; display: flex; align-items: center; }
+.cs-nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 48px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+.back-btn { font-size: 14px; font-weight: 600; color: var(--text2); display: flex; align-items: center; gap: 8px; transition: color 0.2s; cursor: pointer; background: none; border: none; font-family: var(--font); }
+.back-btn:hover { color: var(--text); }
+.cs-hero { max-width: var(--max); margin: 0 auto; padding: 100px 48px 56px; }
+.cs-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; display: block; }
+.cs-h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
+.cs-subtitle { font-size: 17px; font-weight: 400; line-height: 1.75; color: var(--text2); max-width: 620px; }
 
-/* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* MOBILE */
-@media(max-width:768px){
-  nav,footer,.cs-nav{padding-left:20px;padding-right:20px}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(13,17,23,.97);padding:20px;gap:16px;border-bottom:1px solid var(--border)}
-  .hero{padding:120px 20px 60px}
-  .tools-strip{padding:16px 20px;gap:14px}
-  .section,.cta-wrap,.about-wrap{padding-left:20px;padding-right:20px}
-  .section{padding-top:60px;padding-bottom:60px}
-  .work-card{grid-template-columns:1fr}
-  .wc-right{border-left:none;border-top:1px solid var(--border)}
-  .wc-img{min-height:180px}
-  .proof-grid{grid-template-columns:1fr}
-  .disc-row{flex-direction:column;gap:8px}
-  .disc-tags{justify-content:flex-start}
-  .exp-row{flex-direction:column;gap:4px}
-  .exp-right{text-align:left}
-  .cta-box{padding:36px 24px}
-  footer{flex-direction:column;align-items:flex-start;padding:24px 20px}
-  .cs-hero,.cs-img-hero,.cs-body,.cs-stack,.cs-reflect,.cs-cta{padding-left:20px;padding-right:20px}
-  .cs-meta{grid-template-columns:1fr;gap:28px;padding-left:20px;padding-right:20px}
-  .cs-metrics{grid-template-columns:1fr;padding-left:20px;padding-right:20px}
-  .cs-metric:first-child{border-radius:12px 12px 0 0}
-  .cs-metric:last-child{border-radius:0 0 12px 12px}
-  .cs-imgs{grid-template-columns:1fr;padding-left:20px;padding-right:20px}
-  .rb{padding:24px 18px}
-  .cs-cta-box{padding:36px 20px}
+/* CASE STUDY HERO IMAGE - glassmorphism frame */
+.cs-img-hero { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
+.cs-img-box {
+  width: 100%; aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(61,158,148,0.08), rgba(155,127,163,0.06));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
 }
+.cs-img-box::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(61,158,148,0.04) 0%, transparent 50%, rgba(155,127,163,0.04) 100%);
+  z-index: 1; pointer-events: none;
+}
+.cs-img-box img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 0; }
+
+.cs-meta-wrap { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; }
+.cs-meta dt { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
+.cs-meta dd { font-size: 14px; color: var(--text); font-weight: 500; margin-bottom: 20px; }
+.cs-ch-h3 { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 12px; letter-spacing: -0.3px; }
+.cs-ch-p { font-size: 15px; font-weight: 400; line-height: 1.8; color: var(--text2); margin-bottom: 28px; }
+
+.cs-metrics-bar { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
+.cs-metrics-row { display: grid; grid-template-columns: repeat(3,1fr); background: rgba(13,15,20,0.9); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.cs-metric { padding: 32px 28px; border-right: 1px solid var(--border); text-align: center; }
+.cs-metric:last-child { border-right: none; }
+.cs-metric-num { font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: var(--teal); display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 8px; line-height: 1; letter-spacing: -1px; }
+.cs-metric-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text3); line-height: 1.4; }
+
+.cs-process { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
+.cs-h2 { font-size: clamp(26px, 3vw, 36px); font-weight: 800; letter-spacing: -0.8px; color: var(--text); margin-bottom: 36px; }
+.process-steps { display: flex; flex-direction: column; }
+.process-step { border-left: 2px solid var(--teal); padding: 0 0 36px 24px; position: relative; }
+.process-step::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+.process-step:last-child { padding-bottom: 0; }
+.step-h4 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.step-p { font-size: 14px; font-weight: 400; line-height: 1.8; color: var(--text2); }
+.quote-box { display: block; margin-top: 20px; background: rgba(61,158,148,0.06); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; padding: 18px 22px; font-size: 15px; font-style: italic; color: var(--text2); line-height: 1.7; }
+
+/* CASE STUDY IMAGE GRID - glassmorphism */
+.cs-img-grid { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
+.img-grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.img-cell {
+  border-radius: 14px; overflow: hidden; position: relative;
+  background: linear-gradient(135deg, rgba(61,158,148,0.06), rgba(155,127,163,0.04));
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  aspect-ratio: 4/3;
+  display: flex; flex-direction: column;
+}
+.img-cell img { width: 100%; flex: 1; object-fit: cover; display: block; }
+.img-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text2); padding: 10px 14px; background: rgba(6,6,8,0.7); text-align: center; }
+
+.cs-stack { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
+.stack-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.stack-pill { background: rgba(255,255,255,0.03); border: 1px solid var(--border2); border-radius: 100px; padding: 8px 18px; font-size: 13px; font-weight: 500; color: var(--text2); }
+.cs-reflect { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
+.reflect-card { background: rgba(13,15,20,0.9); border: 1px solid var(--border); border-radius: 20px; padding: 40px; }
+.reflect-title { font-size: 18px; font-weight: 800; color: var(--teal2); margin-bottom: 16px; }
+.reflect-p { font-size: 15px; font-weight: 400; line-height: 1.85; color: var(--text2); }
+.cs-footer-cta { max-width: var(--max); margin: 0 auto; padding: 0 48px 120px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .section, .mindmap-section { padding: 64px 20px; }
+  .tools-strip { padding: 16px 20px; }
+  .work-card { padding: 28px; }
+  .card-metrics { gap: 28px; }
+  .cta-wrap { padding: 0 20px 64px; }
+  .cta-card { padding: 48px 24px; }
+  .statement-break { padding: 60px 20px; }
+  .statement-fill-text { font-size: clamp(28px, 8vw, 52px); letter-spacing: -2px; }
+  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+  .mindmap-canvas { display: none !important; }
+  .mindmap-mobile { display: block; }
+  .cs-hero, .cs-img-hero, .cs-process, .cs-img-grid, .cs-stack, .cs-reflect, .cs-footer-cta { padding-left: 20px; padding-right: 20px; }
+  .cs-nav-inner { padding: 0 20px; }
+  .cs-meta-wrap { grid-template-columns: 1fr; gap: 24px; padding-left: 20px; padding-right: 20px; }
+  .cs-metrics-bar { padding-left: 20px; padding-right: 20px; }
+  .cs-metrics-row { grid-template-columns: 1fr; }
+  .cs-metric { border-right: none; border-bottom: 1px solid var(--border); }
+  .cs-metric:last-child { border-bottom: none; }
+  .img-grid-4 { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) { .hero-h1 { font-size: 36px; letter-spacing: -1px; } }
 </style>
 </head>
 <body>
 
-<!-- BLOBS (always visible in background) -->
-<div class="blobs">
-  <div class="blob blob-a"></div>
-  <div class="blob blob-b"></div>
-  <div class="blob blob-c"></div>
+<div class="blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 </div>
 
-<!-- ══════════════════════════ HOME PAGE ══════════════════════════ -->
+<!-- HOME PAGE -->
 <div id="home-page">
 
 <nav>
-  <a href="#" class="nav-logo">A/</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="mailto:aashrayrajm@gmail.com" class="nav-cta">Contact</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="mailto:aashrayrajm@gmail.com" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<section class="hero">
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">x</button>
+  <a href="#work" onclick="document.getElementById('mobileNav').classList.remove('open')">Work</a>
+  <a href="#experience" onclick="document.getElementById('mobileNav').classList.remove('open')">Experience</a>
+  <a href="#faq" onclick="document.getElementById('mobileNav').classList.remove('open')">FAQ</a>
+  <a href="mailto:aashrayrajm@gmail.com" onclick="document.getElementById('mobileNav').classList.remove('open')">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
   <div class="hero-inner">
-    <div class="hero-badge"><span class="badge-pulse"></span>Open To Senior Product Designer Roles</div>
-    <h1>Designing for <em>humans</em><br>that AI has never met</h1>
-    <p class="hero-sub">Senior Product Designer with 5 years building AI-powered enterprise products. I go on-ground with real users — construction sites, clinics, field teams — and design the simplest thing that actually solves the problem.</p>
-    <div class="hero-btns">
-      <a href="#work" class="btn-solid">View My Work</a>
-      <a href="mailto:aashrayrajm@gmail.com" class="btn-ghost">Contact Me</a>
-    </div>
+    <p class="hero-greeting reveal">Hi, I'm Aashray and I do</p>
+    <h1 class="hero-h1 reveal">Designing for <em>humans</em><br>that AI has never met</h1>
+    <p class="hero-sub reveal">Senior Product Designer with 5 years building AI-powered enterprise products. I go on-ground with real users and design the simplest thing that actually solves the problem.</p>
+    <div class="reveal"><a href="#work" class="btn-primary">View My Work</a></div>
   </div>
 </section>
 
-<div class="tools-strip">
-  <span class="strip-label">Worked with</span>
-  <span class="strip-item">Figma</span>
-  <span class="strip-item">Shadcn UI</span>
-  <span class="strip-item">UX Pilot</span>
-  <span class="strip-item">Claude</span>
-  <span class="strip-item">Jira</span>
-  <span class="strip-item">Notion</span>
-  <span class="strip-item">Framer</span>
-  <span class="strip-item">Adobe Creative Suite</span>
-</div>
-
-<!-- WORK SECTION -->
-<div id="work" class="section reveal">
-  <div class="sec-label"><div class="sec-dot"></div><span class="sec-title">Selected Work</span></div>
-  <div class="work-grid">
-
-    <div class="work-card" onclick="showCase('inndoc')">
-      <div class="wc-left">
-        <div>
-          <div class="wc-tag">AI SaaS · Lead Designer · 2024–25</div>
-          <h2 class="wc-title">Designing AI that Construction Teams Actually Trust</h2>
-          <p class="wc-desc">Led end-to-end design of an AI document intelligence platform for construction teams. Solo designer from research to delivery.</p>
-        </div>
-        <div class="wc-metrics">
-          <div><div class="mv">70%</div><div class="ml">Time Saved on Contracts</div></div>
-          <div><div class="mv">2×</div><div class="ml">Contract Delivery Speed</div></div>
-        </div>
-        <span class="wc-btn">View case study →</span>
-      </div>
-      <div class="wc-right">
-        <div class="wc-img"><img src="https://placehold.co/700x440/1c2333/4a9b8e?text=InnDoc+AI&font=lato" alt="InnDoc AI"></div>
-      </div>
+<!-- TOOLS -->
+<div class="tools-strip reveal">
+  <div class="tools-inner">
+    <span class="tools-label">Worked with</span>
+    <div class="tools-pills">
+      <span class="tool-pill">Figma</span>
+      <span class="tool-pill">Shadcn UI</span>
+      <span class="tool-pill">UX Pilot</span>
+      <span class="tool-pill">Claude</span>
+      <span class="tool-pill">Jira</span>
+      <span class="tool-pill">Notion</span>
+      <span class="tool-pill">Framer</span>
+      <span class="tool-pill">Adobe Creative Suite</span>
     </div>
-
-    <div class="work-card" onclick="showCase('inncircles')">
-      <div class="wc-left">
-        <div>
-          <div class="wc-tag">Construction SaaS · 5 Years · USA</div>
-          <h2 class="wc-title">Building a Construction OS from 0 to $2.4M</h2>
-          <p class="wc-desc">Designed the entire platform from scratch. 4 years embedded with construction teams across India and the USA.</p>
-        </div>
-        <div class="wc-metrics">
-          <div><div class="mv">20+</div><div class="ml">Enterprise Clients</div></div>
-          <div><div class="mv">$2.4M</div><div class="ml">Revenue Impact</div></div>
-        </div>
-        <span class="wc-btn">View case study →</span>
-      </div>
-      <div class="wc-right">
-        <div class="wc-img"><img src="https://placehold.co/700x440/1c2333/4a9b8e?text=Inncircles+Arena&font=lato" alt="Inncircles"></div>
-      </div>
-    </div>
-
-    <div class="work-card" onclick="showCase('breathe')">
-      <div class="wc-left">
-        <div>
-          <div class="wc-tag">Healthcare · AI · IoT · Mobile · 2020</div>
-          <h2 class="wc-title">Built an AI Medical Device at 20 During COVID</h2>
-          <p class="wc-desc">Wearable vest with ML-powered lung disease detection. No company. No brief. Just a real problem and a working solution.</p>
-        </div>
-        <div class="wc-metrics">
-          <div><div class="mv">Patent</div><div class="ml">Published in India</div></div>
-          <div><div class="mv">1st</div><div class="ml">Road to Shine, Japan</div></div>
-        </div>
-        <span class="wc-btn">View case study →</span>
-      </div>
-      <div class="wc-right">
-        <div class="wc-img"><img src="https://placehold.co/700x440/1c2333/9b7fa3?text=Breath-IN-Vest&font=lato" alt="Breath-IN-Vest"></div>
-      </div>
-    </div>
-
-    <div class="work-card" style="opacity:.5;cursor:default">
-      <div class="wc-left">
-        <div>
-          <div class="wc-tag">Healthcare · GovTech · Internships</div>
-          <h2 class="wc-title">Physiotherapy & COVID Diagnostics</h2>
-          <p class="wc-desc">On-ground research with patients and healthcare professionals across Hyderabad and Secunderabad.</p>
-        </div>
-        <div class="wc-metrics">
-          <div><div class="mv">50+</div><div class="ml">User Interviews</div></div>
-          <div><div class="mv">2</div><div class="ml">Healthcare Domains</div></div>
-        </div>
-        <span class="wc-btn wc-btn-off">Coming Soon</span>
-      </div>
-      <div class="wc-right">
-        <div class="wc-img"><img src="https://placehold.co/700x440/1c2333/4d5566?text=Early+Work&font=lato" alt="Early Work"></div>
-      </div>
-    </div>
-
   </div>
 </div>
 
-<!-- ABOUT TEXT -->
-<div class="about-wrap reveal">
-  <p class="about-prose">
-    Senior Product Designer specializing in <span class="pill pill-t">AI Product Design</span> with <span class="pill">5 years</span> of experience solving complex problems where mistakes have real consequences.<br><br>
-    I've done on-ground research with <span class="pill">construction workers</span>, <span class="pill">physiotherapy patients</span> and <span class="pill">respiratory healthcare users</span> across India, USA and Japan.<br><br>
-    I don't just research. I stay until the product works.
-  </p>
+<!-- WORK -->
+<div id="work" class="section reveal">
+  <div class="section-label"><div class="section-dot"></div><span class="section-title">My Work</span></div>
+  <div class="work-grid">
+    <div class="work-card" onclick="showCase('inndoc')">
+      <p class="card-tag">AI SaaS · Lead Designer · 2024-25</p>
+      <h2 class="card-h3">Designing AI that Construction Teams Actually Trust</h2>
+      <p class="card-desc">Led end-to-end design of an AI document intelligence platform for construction teams. Solo designer from research to delivery.</p>
+      <div class="card-metrics">
+        <div><span class="metric-num">70%</span><span class="metric-lbl">Time Saved on Contracts</span></div>
+        <div><span class="metric-num">2x</span><span class="metric-lbl">Contract Delivery Speed</span></div>
+      </div>
+      <span class="card-cta">View case study</span>
+    </div>
+    <div class="work-card" onclick="showCase('inncircles')">
+      <p class="card-tag">Construction SaaS · 5 Years · USA</p>
+      <h2 class="card-h3">Building a Construction OS from 0 to $2.4M</h2>
+      <p class="card-desc">Designed the entire platform from scratch. 4 years embedded with construction teams across India and the USA.</p>
+      <div class="card-metrics">
+        <div><span class="metric-num">20+</span><span class="metric-lbl">Enterprise Clients</span></div>
+        <div><span class="metric-num">$2.4M</span><span class="metric-lbl">Revenue Impact</span></div>
+      </div>
+      <span class="card-cta">View case study</span>
+    </div>
+    <div class="work-card" onclick="showCase('breathe')">
+      <p class="card-tag">Healthcare · AI · IoT · Mobile · 2020</p>
+      <h2 class="card-h3">Built an AI Medical Device at 20 During COVID</h2>
+      <p class="card-desc">Wearable vest with ML-powered lung disease detection. No company. No brief. Just a real problem and a working solution.</p>
+      <div class="card-metrics">
+        <div><span class="metric-num">Patent</span><span class="metric-lbl">Published in India</span></div>
+        <div><span class="metric-num">1st</span><span class="metric-lbl">Road to Shine, Japan</span></div>
+      </div>
+      <span class="card-cta">View case study</span>
+    </div>
+  </div>
 </div>
 
-<!-- WHAT I DO -->
-<div id="experience" class="section reveal">
-  <div class="sec-label"><div class="sec-dot"></div><span class="sec-title">What I Do</span></div>
-  <div class="discs">
-    <div class="disc-row"><span class="disc-name">Research</span><div class="disc-tags"><span class="disc-tag">Field Interviews</span><span class="disc-tag">Journey Mapping</span><span class="disc-tag">Contextual Inquiry</span><span class="disc-tag">Usability Testing</span></div></div>
-    <div class="disc-row"><span class="disc-name">Product</span><div class="disc-tags"><span class="disc-tag">End-to-End UX</span><span class="disc-tag">Wireframes</span><span class="disc-tag">Prototyping</span><span class="disc-tag">High-Fidelity</span></div></div>
-    <div class="disc-row"><span class="disc-name">AI Design</span><div class="disc-tags"><span class="disc-tag">Prompt UX</span><span class="disc-tag">AI Interaction Design</span><span class="disc-tag">LLM-Powered Features</span></div></div>
-    <div class="disc-row"><span class="disc-name">Systems</span><div class="disc-tags"><span class="disc-tag">Shadcn UI</span><span class="disc-tag">Design Tokens</span><span class="disc-tag">Component Libraries</span><span class="disc-tag">Dev Handoff</span></div></div>
-    <div class="disc-row"><span class="disc-name">Growth</span><div class="disc-tags"><span class="disc-tag">A/B Testing</span><span class="disc-tag">Landing Pages</span><span class="disc-tag">Pitch Decks</span><span class="disc-tag">GTM Design</span></div></div>
+<!-- STATEMENT SCROLL FILL -->
+<div class="statement-break" id="statement-section">
+  <div class="statement-fill-wrap">
+    <div class="statement-line" id="stmt-line1">
+      <span class="statement-line-text">I don't just research.</span>
+      <span class="statement-line-fill">I don't just research.</span>
+    </div>
+    <div class="statement-line" id="stmt-line2" style="margin-top:12px">
+      <span class="statement-line-text">I stay until the product works.</span>
+      <span class="statement-line-fill">I stay until the product works.</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT I DO - MINDMAP -->
+<div id="experience" class="mindmap-section reveal">
+  <div class="section-label"><div class="section-dot"></div><span class="section-title">What I Do</span></div>
+
+  <!-- Desktop mindmap -->
+  <div class="mindmap-canvas" id="mindmapCanvas">
+    <svg class="mindmap-svg" id="mindmapSvg"></svg>
+    <div class="mindmap-center" id="mindmapCenter">Aashray</div>
+  </div>
+
+  <!-- Mobile mindmap -->
+  <div class="mindmap-mobile" id="mindmapMobile">
+    <div class="mm-mobile-grid">
+      <div class="mm-mobile-item"><div class="mm-mobile-label"><span>🔍</span>Research</div><div class="mm-mobile-tags"><span class="mm-mobile-tag">Field Interviews</span><span class="mm-mobile-tag">Journey Mapping</span><span class="mm-mobile-tag">Contextual Inquiry</span><span class="mm-mobile-tag">Usability Testing</span></div></div>
+      <div class="mm-mobile-item"><div class="mm-mobile-label"><span>🎯</span>Product</div><div class="mm-mobile-tags"><span class="mm-mobile-tag">End-to-End UX</span><span class="mm-mobile-tag">Wireframes</span><span class="mm-mobile-tag">Prototyping</span><span class="mm-mobile-tag">High-Fidelity</span></div></div>
+      <div class="mm-mobile-item"><div class="mm-mobile-label"><span>🤖</span>AI Design</div><div class="mm-mobile-tags"><span class="mm-mobile-tag">Prompt UX</span><span class="mm-mobile-tag">AI Interaction</span><span class="mm-mobile-tag">LLM Features</span></div></div>
+      <div class="mm-mobile-item"><div class="mm-mobile-label"><span>🧩</span>Systems</div><div class="mm-mobile-tags"><span class="mm-mobile-tag">Shadcn UI</span><span class="mm-mobile-tag">Design Tokens</span><span class="mm-mobile-tag">Dev Handoff</span></div></div>
+      <div class="mm-mobile-item"><div class="mm-mobile-label"><span>📈</span>Growth</div><div class="mm-mobile-tags"><span class="mm-mobile-tag">A/B Testing</span><span class="mm-mobile-tag">Landing Pages</span><span class="mm-mobile-tag">GTM Design</span></div></div>
+    </div>
   </div>
 </div>
 
 <!-- SKILLS -->
 <div class="section reveal" style="padding-top:0">
-  <div class="sec-label"><div class="sec-dot"></div><span class="sec-title">Skills</span></div>
+  <div class="section-label"><div class="section-dot"></div><span class="section-title">Skills</span></div>
   <div class="skills-grid">
-    <span class="sk">Field User Research</span><span class="sk">AI Product Design</span><span class="sk">Design Systems</span><span class="sk">UX Strategy</span><span class="sk">Interaction Design</span><span class="sk">Usability Testing</span><span class="sk">Wireframing</span><span class="sk">Prototyping</span><span class="sk">WCAG Accessibility</span><span class="sk">Data Visualization</span><span class="sk">Mobile-First Design</span><span class="sk">A/B Testing</span><span class="sk">Growth Design</span><span class="sk">Dev Collaboration</span><span class="sk">Design Leadership</span><span class="sk">Product Marketing</span><span class="sk">Cross-Cultural Research</span><span class="sk">Prompt UX</span>
+    <span class="skill-pill">Field User Research</span><span class="skill-pill">AI Product Design</span><span class="skill-pill">Design Systems</span><span class="skill-pill">UX Strategy</span><span class="skill-pill">Interaction Design</span><span class="skill-pill">Usability Testing</span><span class="skill-pill">Wireframing</span><span class="skill-pill">Prototyping</span><span class="skill-pill">WCAG Accessibility</span><span class="skill-pill">Data Visualization</span><span class="skill-pill">Mobile-First Design</span><span class="skill-pill">A/B Testing</span><span class="skill-pill">Growth Design</span><span class="skill-pill">Dev Collaboration</span><span class="skill-pill">Design Leadership</span><span class="skill-pill">Product Marketing</span><span class="skill-pill">Cross-Cultural Research</span><span class="skill-pill">Prompt UX</span>
   </div>
 </div>
 
 <!-- EXPERIENCE -->
 <div class="section reveal" style="padding-top:0">
-  <div class="sec-label"><div class="sec-dot"></div><span class="sec-title">Experience</span></div>
+  <div class="section-label"><div class="section-dot"></div><span class="section-title">Experience</span></div>
   <div>
-    <div class="exp-row"><span class="exp-role">Senior Product Designer – AI & Design Systems</span><div class="exp-right"><div class="exp-co">Inncircles Technologies</div><div class="exp-dt">Aug 2023 – Present</div></div></div>
-    <div class="exp-row"><span class="exp-role">Product Associate</span><div class="exp-right"><div class="exp-co">Inncircles Technologies</div><div class="exp-dt">Aug 2022 – Aug 2023</div></div></div>
-    <div class="exp-row"><span class="exp-role">User Research & Product Designer</span><div class="exp-right"><div class="exp-co">Inncircles Technologies</div><div class="exp-dt">Aug 2021 – Aug 2022</div></div></div>
-    <div class="exp-row"><span class="exp-role">User Researcher</span><div class="exp-right"><div class="exp-co">Startoon Labs</div><div class="exp-dt">Apr – Jun 2021</div></div></div>
-    <div class="exp-row"><span class="exp-role">Research Collaborator</span><div class="exp-right"><div class="exp-co">DSI Technologies, Japan</div><div class="exp-dt">Jan – Feb 2021</div></div></div>
-    <div class="exp-row"><span class="exp-role">Innovator (Internship)</span><div class="exp-right"><div class="exp-co">Telangana State Council of Science & Technology</div><div class="exp-dt">May – Aug 2020</div></div></div>
-  </div>
-</div>
-
-<!-- PROOF -->
-<div class="section reveal" style="padding-top:0">
-  <div class="proof-grid">
-    <div class="proof-card"><div class="proof-name">Inncircles Technologies</div><p class="proof-q">"Only designer selected from the entire company to fly to the US and onboard $500M+ enterprise clients."</p></div>
-    <div class="proof-card"><div class="proof-name">Road to Shine · Japan</div><p class="proof-q">"Won 1st place in Hyderabad. Represented India at T-Hub and Hiroshima Prefecture."</p></div>
-    <div class="proof-card"><div class="proof-name">Patent Office of India</div><p class="proof-q">"Published inventor at 20 — Covid-19 Diagnostic System, Patent Office Journal 32/2020."</p></div>
+    <div class="exp-item">
+      <p class="exp-role">Senior Product Designer - AI and Design Systems</p>
+      <p class="exp-company">Inncircles Technologies</p>
+      <p class="exp-date">Aug 2023 - Present</p>
+      <p class="exp-note">Designed InnDoc AI, a full AI document intelligence platform. Built the Shadcn design system from scratch. Only designer selected to fly to the US and onboard $500M+ enterprise clients.</p>
+    </div>
+    <div class="exp-item">
+      <p class="exp-role">User Researcher</p>
+      <p class="exp-company">Startoon Labs</p>
+      <p class="exp-date">Apr - Jun 2021, Secunderabad</p>
+      <p class="exp-note">On-ground interviews with physiotherapists and patients. Created personas, journey maps, and affinity diagrams to guide product design.</p>
+    </div>
+    <div class="exp-item">
+      <p class="exp-role">Research Collaborator</p>
+      <p class="exp-company">DSI Technologies, Japan</p>
+      <p class="exp-date">Jan - Feb 2021, Hiroshima Prefecture</p>
+      <p class="exp-note">Collaborated on the India-Japan Road to Shine human-centered innovation program. Represented India at T-Hub and Hiroshima.</p>
+    </div>
+    <div class="exp-item">
+      <p class="exp-role">Innovator (Internship)</p>
+      <p class="exp-company">Telangana State Council of Science and Technology</p>
+      <p class="exp-date">May - Aug 2020, Hyderabad</p>
+      <p class="exp-note">Designed the Covid-19 Diagnostic System, published in the Indian Patent Office Journal 32/2020. Received government recognition from Telangana State.</p>
+    </div>
   </div>
 </div>
 
 <!-- FAQ -->
-<div id="faq" class="section reveal">
-  <div class="sec-label"><div class="sec-dot"></div><span class="sec-title">Frequently Asked Questions</span></div>
-  <details><summary>What is your design process? <span class="faq-icon">+</span></summary><p class="faq-body">I start with the human, not the brief. I get as close to the real user as possible — field interviews, on-site observation, direct conversation. Then I find the simplest solution that genuinely works. Not the most impressive one. From there: wireframes, iteration, high-fidelity — staying connected to the user throughout.</p></details>
-  <details><summary>What roles are you looking for? <span class="faq-icon">+</span></summary><p class="faq-body">Senior Product Designer, Lead Product Designer, or Head of Design — at startups or scale-ups building AI-powered products. I work best close to users, across the full product lifecycle, collaborating directly with founders or product leads.</p></details>
-  <details><summary>How do you approach designing AI products? <span class="faq-icon">+</span></summary><p class="faq-body">AI products fail when users don't trust them. I make AI feel predictable and honest — not magical. I've designed for construction teams who are deeply skeptical of technology. That taught me to surface AI outputs clearly, give users control, and never hide uncertainty behind a clean UI.</p></details>
-  <details><summary>What makes your research different? <span class="faq-icon">+</span></summary><p class="faq-body">I've researched users who have never spoken to a computer — construction workers on US job sites, respiratory patients in rural India, physiotherapy patients in Secunderabad. Their behavior is in no dataset. Understanding them required physical presence, trust, and time. That's different from running a usability test.</p></details>
-  <details><summary>What tools do you use? <span class="faq-icon">+</span></summary><p class="faq-body">Figma for design. Shadcn UI for design systems. UX Pilot and Claude for AI-assisted workflows. Framer for portfolio. Adobe Creative Suite and Canva for marketing. Jira, Confluence, and Notion for collaboration.</p></details>
+<div id="faq" class="section reveal" style="padding-top:0">
+  <div class="section-label"><div class="section-dot"></div><span class="section-title">Frequently Asked Questions</span></div>
+  <div class="faq-list">
+    <details>
+      <summary>What is my design process? <span class="faq-icon">+</span></summary>
+      <p class="faq-body">I start with the human, not the brief. I get as close to the real user as possible - field interviews, on-site observation, direct conversation. Then I find the simplest solution that genuinely works. Not the most impressive one. From there: wireframes, iteration, high-fidelity - staying connected to the user throughout.</p>
+    </details>
+    <details>
+      <summary>How do I approach designing AI products? <span class="faq-icon">+</span></summary>
+      <p class="faq-body">AI products fail when users do not trust them. I make AI feel predictable and honest - not magical. I have designed for construction teams who are deeply skeptical of technology. That taught me to surface AI outputs clearly, give users control, and never hide uncertainty behind a clean UI.</p>
+    </details>
+    <details>
+      <summary>What makes my research different? <span class="faq-icon">+</span></summary>
+      <p class="faq-body">I have researched users who have never spoken to a computer - construction workers on US job sites, respiratory patients in rural India, physiotherapy patients in Secunderabad. Their behavior is in no dataset. Understanding them required physical presence, trust, and time. That is different from running a usability test.</p>
+    </details>
+    <details>
+      <summary>What tools do I use? <span class="faq-icon">+</span></summary>
+      <p class="faq-body">Figma for design. Shadcn UI for design systems. UX Pilot and Claude for AI-assisted workflows. Adobe Creative Suite and Canva for marketing. Jira, Confluence, and Notion for collaboration.</p>
+    </details>
+  </div>
 </div>
 
 <!-- CTA -->
 <div class="cta-wrap reveal">
-  <div class="cta-box">
-    <h2 class="cta-title">Let's build something<br>that actually helps people.</h2>
+  <div class="cta-card">
+    <h2 class="cta-h2">Let's build something that<br>actually helps people.</h2>
     <p class="cta-sub">Open to Senior Product Designer roles. Hyderabad · Hybrid · Remote.</p>
-    <a href="mailto:aashrayrajm@gmail.com" class="btn-solid">Contact Me</a>
+    <a href="mailto:aashrayrajm@gmail.com" class="btn-cta">Contact Me</a>
   </div>
 </div>
 
@@ -436,199 +539,334 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:28
 </footer>
 </div>
 
-
-<!-- ══════════════════════ CASE: INNDOC AI ══════════════════════ -->
+<!-- CASE: INNDOC AI -->
 <div id="case-inndoc" class="cs-page">
-<div class="blobs"><div class="blob blob-a"></div><div class="blob blob-b"></div></div>
-<nav class="cs-nav">
-  <span class="cs-back" onclick="hideCase()">← Back</span>
-  <a href="#" class="nav-logo">A/</a>
-  <a href="mailto:aashrayrajm@gmail.com" class="btn-solid" style="font-size:13px;padding:9px 20px">Contact</a>
-</nav>
+<div class="blobs" aria-hidden="true"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
+<nav class="cs-nav"><div class="cs-nav-inner"><button class="back-btn" onclick="hideCase()">← Back</button><a href="mailto:aashrayrajm@gmail.com" class="nav-cta">Contact</a></div></nav>
 <div class="cs-hero">
-  <span class="cs-tag">AI SaaS · Lead Designer · Aug 2024 – Feb 2025</span>
-  <h1 class="cs-title">Designing AI that Construction Teams Actually Trust</h1>
-  <p class="cs-subtitle">End-to-end design of an AI document intelligence platform — reducing contract review time by 70% and doubling delivery speed. Solo designer, from research to launch.</p>
+  <span class="cs-tag">AI SaaS · Lead Designer · Aug 2024 - Feb 2025</span>
+  <h1 class="cs-h1">Designing AI that Construction Teams Actually Trust</h1>
+  <p class="cs-subtitle">End-to-end design of an AI document intelligence platform - reducing contract review time by 70% and doubling delivery speed. Solo designer, from research to launch.</p>
 </div>
-<div class="cs-img-hero"><div class="cs-img-box"><img src="https://placehold.co/1200x675/1c2333/4a9b8e?text=InnDoc+AI+–+Document+Intelligence+Platform&font=lato" alt="InnDoc AI"></div></div>
-<div class="cs-meta">
-  <div class="meta-col">
-    <div class="meta-item"><label>Industry</label><span>Construction Tech / AI SaaS</span></div>
-    <div class="meta-item"><label>Role</label><span>Lead Designer (Solo)</span></div>
-    <div class="meta-item"><label>Duration</label><span>Aug 2024 – Feb 2025</span></div>
-    <div class="meta-item"><label>Team</label><span>1 Business Analyst · 1 Designer</span></div>
-  </div>
-  <div class="cr-col">
-    <div class="cr-block"><h3>Challenge</h3><p>Construction teams manage hundreds of contracts — often 300–500 pages each. Missing one clause can cost hundreds of thousands of dollars. Most teams still reviewed documents manually with no workflow, no AI assistance, and no audit trail.</p></div>
-    <div class="cr-block"><h3>Results</h3><p>Teams handled 2–3× more bids without adding headcount. First-time AI users navigated confidently from session one — because the interface made AI feel trustworthy, not intimidating.</p></div>
-  </div>
+<div class="cs-img-hero">
+  <div class="cs-img-box"><img src="inndoc-hero.png" alt="InnDoc AI Platform Overview"></div>
 </div>
-<div class="cs-metrics">
-  <div class="cs-metric"><div class="cs-mv">70% <span class="cs-md">↓</span></div><div class="cs-ml">Time saved on contract generation</div></div>
-  <div class="cs-metric"><div class="cs-mv">60% <span class="cs-md">↓</span></div><div class="cs-ml">Reduction in drafting effort</div></div>
-  <div class="cs-metric"><div class="cs-mv">2× <span class="cs-md">↑</span></div><div class="cs-ml">Contract delivery speed</div></div>
-</div>
-<div class="cs-body">
-  <div class="cs-sec">
-    <h2>Process</h2>
-    <div class="ps-list">
-      <div class="ps"><h4>Research & Analysis</h4><p>2 years of embedded experience with construction back-office teams before this project. Focused interviews on document workflows. Key finding: 80% of the friction was in reading, not writing.</p></div>
-      <div class="ps"><h4>AI Sidebar — Always Visible</h4><p>Summarize, Translate, Compare, and Checkpoints accessible at any point. No hidden features. The sidebar stays open because the user should never have to think about how to access AI.</p></div>
-      <div class="ps"><h4>Risk Score on Every Document</h4><p>AI generates a compliance risk score based on custom checklists. Users see it immediately on open. In construction, you need to know the risk before you start reading — not after.</p></div>
-      <div class="ps"><h4>Prompt Templates</h4><p>Users saved frequent AI queries as reusable templates. One of the biggest workflow wins discovered through user research — reducing repeated typing for common document tasks.</p></div>
-      <div class="ps"><h4>Approval Workflow in the Document</h4><p>Drafting → Internal Review → Compliance Validation → Approval. All within the same screen. No email chains. No context switching.</p></div>
-      <div class="ps"><h4>Empty States as Trust Signals</h4><p>Every empty state communicates what AI will do next — not just that nothing is there yet. This single decision reduced confusion for first-time AI users significantly.</p></div>
-    </div>
+<div class="cs-meta-wrap">
+  <dl class="cs-meta"><dt>Industry</dt><dd>Construction Tech / AI SaaS</dd><dt>Role</dt><dd>Lead Designer (Solo)</dd><dt>Duration</dt><dd>Aug 2024 - Feb 2025</dd><dt>Team</dt><dd>1 Business Analyst, 1 Designer (Me)</dd></dl>
+  <div>
+    <h3 class="cs-ch-h3">The Challenge</h3>
+    <p class="cs-ch-p">Construction teams manage hundreds of contracts - often 300 to 500 pages each. Missing one clause can cost hundreds of thousands of dollars. Most teams still reviewed documents manually with no workflow, no AI assistance, and no audit trail.</p>
+    <h3 class="cs-ch-h3">The Results</h3>
+    <p class="cs-ch-p">Teams handled 2 to 3x more bids without adding headcount. First-time AI users navigated confidently from session one - because the interface made AI feel trustworthy, not intimidating.</p>
   </div>
 </div>
-<div class="cs-imgs">
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=AI+Sidebar+View&font=lato" alt="AI Sidebar"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=Risk+Score+Dashboard&font=lato" alt="Risk Score"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=Prompt+Templates&font=lato" alt="Templates"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=Approval+Workflow&font=lato" alt="Workflow"></div>
+<div class="cs-metrics-bar">
+  <div class="cs-metrics-row">
+    <div class="cs-metric"><div class="cs-metric-num">70%</div><div class="cs-metric-lbl">Time saved on contracts</div></div>
+    <div class="cs-metric"><div class="cs-metric-num">60%</div><div class="cs-metric-lbl">Reduction in drafting effort</div></div>
+    <div class="cs-metric"><div class="cs-metric-num">2x</div><div class="cs-metric-lbl">Contract delivery speed</div></div>
+  </div>
 </div>
-<div class="cs-stack"><h2>Stack</h2><div class="sp-list"><span class="sp">Figma</span><span class="sp">Shadcn UI</span><span class="sp">Notion</span><span class="sp">Jira</span><span class="sp">Confluence</span></div></div>
-<div class="cs-reflect"><div class="rb"><h2>✦ Reflections</h2><p>In a high-stakes industry, trust is the product. As AI capabilities grow, so does the responsibility to make them interpretable. My next step for InnDoc is agentic AI with confidence scoring — giving users outputs they can act on with complete confidence.</p></div></div>
-<div class="cs-cta"><div class="cs-cta-box"><h2>Let's build something that actually helps people.</h2><p>Open to Senior Product Designer roles. Hyderabad · Hybrid · Remote.</p><a href="mailto:aashrayrajm@gmail.com" class="btn-solid">Contact Me</a></div></div>
-<footer style="position:relative;z-index:1"><p class="footer-copy">© Aashray Raj Mathur 2026</p><div class="footer-links"><a href="https://www.linkedin.com/in/aashray-raj-mathur-1a0838194" target="_blank">LinkedIn</a><a href="mailto:aashrayrajm@gmail.com">Mail</a></div></footer>
+<div class="cs-process">
+  <h2 class="cs-h2">Process</h2>
+  <div class="process-steps">
+    <div class="process-step"><h4 class="step-h4">Research and Analysis</h4><p class="step-p">2 years of embedded experience with construction back-office teams before this project. Focused interviews on document workflows. Key finding: 80% of the friction was in reading, not writing.</p></div>
+    <div class="process-step"><h4 class="step-h4">AI Sidebar Always Visible</h4><p class="step-p">Summarize, Translate, Compare, and Checkpoints accessible at any point. No hidden features. The sidebar stays open because the user should never have to think about how to access AI.</p></div>
+    <div class="process-step"><h4 class="step-h4">Risk Score on Every Document</h4><p class="step-p">AI generates a compliance risk score based on custom checklists. Users see it immediately on open. In construction, you need to know the risk before you start reading.</p></div>
+    <div class="process-step"><h4 class="step-h4">Prompt Templates</h4><p class="step-p">Users saved frequent AI queries as reusable templates. One of the biggest workflow wins discovered through user research.</p></div>
+    <div class="process-step"><h4 class="step-h4">Approval Workflow in the Document</h4><p class="step-p">Drafting to Internal Review to Compliance Validation to Approval. All within the same screen. No email chains. No context switching.</p></div>
+    <div class="process-step"><h4 class="step-h4">Empty States as Trust Signals</h4><p class="step-p">Every empty state communicates what AI will do next.<span class="quote-box">In a high-stakes industry, trust is the product.</span></p></div>
+  </div>
+</div>
+<div class="cs-img-grid">
+  <h2 class="cs-h2">Screens</h2>
+  <div class="img-grid-4">
+    <div class="img-cell"><img src="inndoc-grid.png" alt="InnDoc Screens"><span class="img-lbl">Contract Document + Prompt Library</span></div>
+    <div class="img-cell"><img src="inndoc-3.png" alt="Contract Document View"><span class="img-lbl">Contract Document View</span></div>
+    <div class="img-cell"><img src="inndoc-4.png" alt="Prompt Library"><span class="img-lbl">Prompt Library</span></div>
+    <div class="img-cell"><img src="inndoc-5.png" alt="AI Chatbot"><span class="img-lbl">AI Chatbot Interface</span></div>
+  </div>
+</div>
+<div class="cs-stack">
+  <h2 class="cs-h2">Stack</h2>
+  <div class="stack-pills"><span class="stack-pill">Figma</span><span class="stack-pill">Shadcn UI</span><span class="stack-pill">Notion</span><span class="stack-pill">Jira</span><span class="stack-pill">Confluence</span></div>
+</div>
+<div class="cs-reflect"><div class="reflect-card"><p class="reflect-title">Reflections</p><p class="reflect-p">In a high-stakes industry, trust is the product. As AI capabilities grow, so does the responsibility to make them interpretable. My next step for InnDoc is agentic AI with confidence scoring - giving users outputs they can act on with complete confidence.</p></div></div>
+<div class="cs-footer-cta"><div class="cta-card"><h2 class="cta-h2">Let's build something that actually helps people.</h2><p class="cta-sub">Open to Senior Product Designer roles. Hyderabad · Hybrid · Remote.</p><a href="mailto:aashrayrajm@gmail.com" class="btn-cta">Contact Me</a></div></div>
+<footer><p class="footer-copy">© Aashray Raj Mathur 2026</p><div class="footer-links"><a href="https://www.linkedin.com/in/aashray-raj-mathur-1a0838194" target="_blank">LinkedIn</a><a href="mailto:aashrayrajm@gmail.com">Mail</a></div></footer>
 </div>
 
-
-<!-- ════════════════════════ CASE: INNCIRCLES ════════════════════════ -->
+<!-- CASE: INNCIRCLES -->
 <div id="case-inncircles" class="cs-page">
-<div class="blobs"><div class="blob blob-a"></div><div class="blob blob-b"></div></div>
-<nav class="cs-nav">
-  <span class="cs-back" onclick="hideCase()">← Back</span>
-  <a href="#" class="nav-logo">A/</a>
-  <a href="mailto:aashrayrajm@gmail.com" class="btn-solid" style="font-size:13px;padding:9px 20px">Contact</a>
-</nav>
+<div class="blobs" aria-hidden="true"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
+<nav class="cs-nav"><div class="cs-nav-inner"><button class="back-btn" onclick="hideCase()">← Back</button><a href="mailto:aashrayrajm@gmail.com" class="nav-cta">Contact</a></div></nav>
 <div class="cs-hero">
   <span class="cs-tag">Construction SaaS · 5 Years · Design System Lead</span>
-  <h1 class="cs-title">Building a Construction OS from 0 to $2.4M</h1>
-  <p class="cs-subtitle">Designed the entire Inncircles platform over 5 years — 1000+ screens, a full design system, and a mobile-first field app. The only designer selected to fly to the US and onboard $500M+ enterprise clients.</p>
+  <h1 class="cs-h1">Building a Construction OS from 0 to $2.4M</h1>
+  <p class="cs-subtitle">Designed the entire Inncircles platform over 5 years - 1000+ screens, a full design system, and a mobile-first field app. The only designer selected to fly to the US and onboard $500M+ enterprise clients.</p>
 </div>
-<div class="cs-img-hero"><div class="cs-img-box"><img src="https://placehold.co/1200x675/1c2333/4a9b8e?text=Inncircles+Arena+–+Construction+OS&font=lato" alt="Inncircles"></div></div>
-<div class="cs-meta">
-  <div class="meta-col">
-    <div class="meta-item"><label>Industry</label><span>Construction SaaS</span></div>
-    <div class="meta-item"><label>Role</label><span>Designer → Product Associate → Senior Designer</span></div>
-    <div class="meta-item"><label>Duration</label><span>Aug 2021 – Present</span></div>
-    <div class="meta-item"><label>Team Led</label><span>6 Designers (Design System)</span></div>
-  </div>
-  <div class="cr-col">
-    <div class="cr-block"><h3>Challenge</h3><p>Construction projects fail because of people problems. Field teams, consultants, and back-office staff working in silos — manual processes, no real-time visibility, constant rework. 60% of delays from poor field execution visibility. 40% from miscommunication.</p></div>
-    <div class="cr-block"><h3>Results</h3><p>90% real-time progress tracking. 100% site documentation centralized. Zero manual follow-ups. 2–3 hours of daily time saved per team through automated inspections and task assignment.</p></div>
-  </div>
+<div class="cs-img-hero">
+  <div class="cs-img-box"><img src="inncircles-4.png" alt="Inncircles Project Dashboard"></div>
 </div>
-<div class="cs-metrics">
-  <div class="cs-metric"><div class="cs-mv">20+ <span class="cs-md">↑</span></div><div class="cs-ml">Enterprise clients onboarded</div></div>
-  <div class="cs-metric"><div class="cs-mv">$2.4M <span class="cs-md">↑</span></div><div class="cs-ml">Revenue impact</div></div>
-  <div class="cs-metric"><div class="cs-mv">4× <span class="cs-md">↑</span></div><div class="cs-ml">Faster consultant coordination</div></div>
-</div>
-<div class="cs-body">
-  <div class="cs-sec">
-    <h2>Process</h2>
-    <div class="ps-list">
-      <div class="ps"><h4>The American Construction Worker Insight</h4><p>On US job sites, field workers needed interfaces that were slower, clearer, with fewer decisions per screen. Gloves on. Sun in their eyes. High distraction. One primary action per screen. Tap-and-submit over form entry. Daily work log submissions went from inconsistent to near-100% compliance.</p></div>
-      <div class="ps"><h4>Simple Forms as Features</h4><p>The smallest UX change had the largest field impact. Replaced form input with button-based selection. A simple form became the most important feature for field workers — because it matched how they actually worked.</p></div>
-      <div class="ps"><h4>Design System — Built from Scratch</h4><p>Token architecture: Primitive → Global → Semantic. 25+ components rebuilt with full variant coverage. Referenced Atlassian, Shopify, Razorpay, Salesforce. Result: 30% reduction in screen design time. 35% faster dev handoffs.</p></div>
-      <div class="ps"><h4>End-to-End Ownership</h4><p>Bridge between construction clients and engineering in India. Managed requirements, translated client needs into dev-ready specs, handled deployments, adjusted to US timezones. Only person from the company selected to fly to the US for enterprise onboarding.</p></div>
-    </div>
-    <div class="hq">"The work log button-to-tap transformation wasn't a design decision. It was a human insight that became one. That's the difference."</div>
+<div class="cs-meta-wrap">
+  <dl class="cs-meta"><dt>Industry</dt><dd>Construction SaaS</dd><dt>Role</dt><dd>Designer to Product Associate to Senior Designer</dd><dt>Duration</dt><dd>Aug 2021 - Present</dd><dt>Team</dt><dd>Led 6 Designers (Design System)</dd></dl>
+  <div>
+    <h3 class="cs-ch-h3">The Challenge</h3>
+    <p class="cs-ch-p">Construction projects fail because of people problems. Field teams, consultants, and back-office staff working in silos - manual processes, no real-time visibility, constant rework. 60% of delays from poor field execution visibility. 40% from miscommunication.</p>
+    <h3 class="cs-ch-h3">The Results</h3>
+    <p class="cs-ch-p">90% real-time progress tracking. 100% site documentation centralized. Zero manual follow-ups. 2 to 3 hours of daily time saved per team through automated inspections and task assignment.</p>
   </div>
 </div>
-<div class="cs-imgs">
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=Field+App+Work+Log&font=lato" alt="Work Log"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=Design+System+Tokens&font=lato" alt="Design System"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=Mobile+Field+App&font=lato" alt="Mobile App"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/4a9b8e?text=Web+Dashboard&font=lato" alt="Dashboard"></div>
+<div class="cs-metrics-bar">
+  <div class="cs-metrics-row">
+    <div class="cs-metric"><div class="cs-metric-num">20+</div><div class="cs-metric-lbl">Enterprise clients onboarded</div></div>
+    <div class="cs-metric"><div class="cs-metric-num">$2.4M</div><div class="cs-metric-lbl">Revenue impact</div></div>
+    <div class="cs-metric"><div class="cs-metric-num">4x</div><div class="cs-metric-lbl">Faster coordination</div></div>
+  </div>
 </div>
-<div class="cs-stack"><h2>Stack</h2><div class="sp-list"><span class="sp">Figma</span><span class="sp">Shadcn UI</span><span class="sp">Jira</span><span class="sp">Confluence</span><span class="sp">Notion</span><span class="sp">Adobe Creative Suite</span></div></div>
-<div class="cs-reflect"><div class="rb"><h2>✦ Reflections</h2><p>Five years in construction technology taught me that the best design decisions aren't made at a desk — they're made on-site, in conversation with the person who has to use the product under pressure. The work log tap transformation wasn't a design decision. It was a human insight that became one.</p></div></div>
-<div class="cs-cta"><div class="cs-cta-box"><h2>Let's build something that actually helps people.</h2><p>Open to Senior Product Designer roles. Hyderabad · Hybrid · Remote.</p><a href="mailto:aashrayrajm@gmail.com" class="btn-solid">Contact Me</a></div></div>
-<footer style="position:relative;z-index:1"><p class="footer-copy">© Aashray Raj Mathur 2026</p><div class="footer-links"><a href="https://www.linkedin.com/in/aashray-raj-mathur-1a0838194" target="_blank">LinkedIn</a><a href="mailto:aashrayrajm@gmail.com">Mail</a></div></footer>
+<div class="cs-process">
+  <h2 class="cs-h2">Process</h2>
+  <div class="process-steps">
+    <div class="process-step"><h4 class="step-h4">The American Construction Worker Insight</h4><p class="step-p">On US job sites, field workers needed interfaces that were slower, clearer, fewer decisions per screen. Gloves on. Sun in their eyes. High distraction. One primary action per screen. Tap-and-submit over form entry. Daily work log submissions went from inconsistent to near-100% compliance.</p></div>
+    <div class="process-step"><h4 class="step-h4">Simple Forms as Features</h4><p class="step-p">Replaced form input with button-based selection. A simple form became the most important feature for field workers.<span class="quote-box">The work log button-to-tap transformation was not a design decision. It was a human insight that became one.</span></p></div>
+    <div class="process-step"><h4 class="step-h4">Design System Built from Scratch</h4><p class="step-p">Token architecture: Primitive to Global to Semantic. 25+ components rebuilt with full variant coverage. Referenced Atlassian, Shopify, Razorpay, Salesforce. Result: 30% reduction in screen design time. 35% faster dev handoffs.</p></div>
+    <div class="process-step"><h4 class="step-h4">End-to-End Ownership</h4><p class="step-p">Bridge between construction clients and engineering in India. Managed requirements, translated client needs into dev-ready specs. Only person from the company selected to fly to the US for enterprise onboarding.</p></div>
+  </div>
+</div>
+<div class="cs-img-grid">
+  <h2 class="cs-h2">Screens</h2>
+  <div class="img-grid-4">
+    <div class="img-cell"><img src="inncircles-1.png" alt="WBS Planning"><span class="img-lbl">Work Breakdown Structure</span></div>
+    <div class="img-cell"><img src="inncircles-2.png" alt="Quality Logs"><span class="img-lbl">Quality Inspection Logs</span></div>
+    <div class="img-cell"><img src="inncircles-3.png" alt="Admin Center"><span class="img-lbl">Admin Center</span></div>
+    <div class="img-cell"><img src="inncircles-4.png" alt="Project Dashboard"><span class="img-lbl">Project Dashboard</span></div>
+  </div>
+</div>
+<div class="cs-stack">
+  <h2 class="cs-h2">Stack</h2>
+  <div class="stack-pills"><span class="stack-pill">Figma</span><span class="stack-pill">Shadcn UI</span><span class="stack-pill">Jira</span><span class="stack-pill">Confluence</span><span class="stack-pill">Notion</span><span class="stack-pill">Adobe Creative Suite</span></div>
+</div>
+<div class="cs-reflect"><div class="reflect-card"><p class="reflect-title">Reflections</p><p class="reflect-p">Five years in construction technology taught me that the best design decisions are not made at a desk - they are made on-site, in conversation with the person who has to use the product under pressure.</p></div></div>
+<div class="cs-footer-cta"><div class="cta-card"><h2 class="cta-h2">Let's build something that actually helps people.</h2><p class="cta-sub">Open to Senior Product Designer roles. Hyderabad · Hybrid · Remote.</p><a href="mailto:aashrayrajm@gmail.com" class="btn-cta">Contact Me</a></div></div>
+<footer><p class="footer-copy">© Aashray Raj Mathur 2026</p><div class="footer-links"><a href="https://www.linkedin.com/in/aashray-raj-mathur-1a0838194" target="_blank">LinkedIn</a><a href="mailto:aashrayrajm@gmail.com">Mail</a></div></footer>
 </div>
 
-
-<!-- ═════════════════════════ CASE: BREATH-IN-VEST ═════════════════════════ -->
+<!-- CASE: BREATH-IN-VEST -->
 <div id="case-breathe" class="cs-page">
-<div class="blobs"><div class="blob blob-a" style="background:radial-gradient(circle,#9b7fa3,#7a5a85)"></div><div class="blob blob-b"></div></div>
-<nav class="cs-nav">
-  <span class="cs-back" onclick="hideCase()">← Back</span>
-  <a href="#" class="nav-logo">A/</a>
-  <a href="mailto:aashrayrajm@gmail.com" class="btn-solid" style="font-size:13px;padding:9px 20px">Contact</a>
-</nav>
+<div class="blobs" aria-hidden="true"><div class="blob blob-1" style="background:radial-gradient(circle,#9b7fa3,#5c3a6b)"></div><div class="blob blob-2"></div></div>
+<nav class="cs-nav"><div class="cs-nav-inner"><button class="back-btn" onclick="hideCase()">← Back</button><a href="mailto:aashrayrajm@gmail.com" class="nav-cta">Contact</a></div></nav>
 <div class="cs-hero">
   <span class="cs-tag">Healthcare · AI · IoT · Mobile · 2020</span>
-  <h1 class="cs-title">I Was 20. COVID Was Closing Hospitals. So I Built a Diagnostic Device.</h1>
-  <p class="cs-subtitle">A wearable AI device that detects lung diseases through breath sounds — built-in stethoscope, Google ML model, mobile app. Built in 2020. Patent published in India.</p>
+  <h1 class="cs-h1">I Was 20. COVID Was Closing Hospitals. So I Built a Diagnostic Device.</h1>
+  <p class="cs-subtitle">A wearable AI device that detects lung diseases through breath sounds - built-in stethoscope, Google ML model, mobile app. Built in 2020. Patent published in India.</p>
 </div>
-<div class="cs-img-hero"><div class="cs-img-box"><img src="https://placehold.co/1200x675/1c2333/9b7fa3?text=Breath-IN-Vest+–+AI+Wearable+Device&font=lato" alt="Breath-IN-Vest"></div></div>
-<div class="cs-meta">
-  <div class="meta-col">
-    <div class="meta-item"><label>Domain</label><span>Healthcare · IoT · AI · Mobile</span></div>
-    <div class="meta-item"><label>Role</label><span>Sole Designer & Inventor</span></div>
-    <div class="meta-item"><label>Year</label><span>2020</span></div>
-    <div class="meta-item"><label>Recognition</label><span>Indian Patent Office · Road to Shine Japan · T-Hub</span></div>
-  </div>
-  <div class="cr-col">
-    <div class="cr-block"><h3>Challenge</h3><p>COVID made hospitals inaccessible. People with respiratory symptoms had no way to self-diagnose. 78% of people surveyed struggled to access respiratory care. 52% couldn't recognize early symptoms. No affordable home solution existed.</p></div>
-    <div class="cr-block"><h3>Results</h3><p>A working AI-powered wearable detecting asthma, bronchitis, and respiratory distress at home. Selected to represent India at T-Hub and Hiroshima Prefecture Japan. Published patent. Government recognition from Telangana State.</p></div>
-  </div>
+<div class="cs-img-hero">
+  <div class="cs-img-box"><img src="breathe-1.jpg" alt="Breath-IN-Vest Wearable Device"></div>
 </div>
-<div class="cs-metrics">
-  <div class="cs-metric"><div class="cs-mv">Published</div><div class="cs-ml">Indian Patent Office Journal 32/2020</div></div>
-  <div class="cs-metric"><div class="cs-mv">1st Place</div><div class="cs-ml">Road to Shine, Hyderabad — Represented India</div></div>
-  <div class="cs-metric"><div class="cs-mv">200+</div><div class="cs-ml">Users surveyed across urban and rural India</div></div>
-</div>
-<div class="cs-body">
-  <div class="cs-sec">
-    <h2>How It Works</h2>
-    <p>The vest contains a built-in stethoscope that captures lung sounds. Audio feeds through a microphone into a mobile app running Google's open-source ML model — trained to detect wheezes, crackles, and respiratory patterns associated with asthma, bronchitis, and other conditions. The app surfaces a clear result with plain-language next steps. No doctor. No hospital.</p>
-  </div>
-  <div class="cs-sec">
-    <h2>Research & Design</h2>
-    <div class="ps-list">
-      <div class="ps"><h4>200+ Surveys</h4><p>Urban and rural patients about respiratory access challenges. 78% struggled to access care. 65% overly relied on specialists. 52% didn't recognize early symptoms — meaning the device needed to catch what users couldn't.</p></div>
-      <div class="ps"><h4>20+ Interviews</h4><p>In-person interviews with patients and healthcare professionals. Key insight: people need results they can understand, not medical jargon. The app had to be plain, clear, and actionable.</p></div>
-      <div class="ps"><h4>App Design Principles</h4><p>One action per screen. No medical jargon. Clear visual feedback: plug in → wear → breathe → wait → result. Colour-coded results (Normal, Crackles, Wheezes) with plain-language explanations and clear next steps.</p></div>
-      <div class="ps"><h4>Road to Shine — Japan</h4><p>Selected for the India-Japan human-centered innovation program. Collaborated with DSI Technologies and Hiroshima Prefecture. Won 1st place in Hyderabad, represented India at T-Hub and Hiroshima.</p></div>
-    </div>
-    <div class="hq">"No company, no brief, no budget. Just a problem and the determination to solve it with the simplest thing that worked. At 20."</div>
+<div class="cs-meta-wrap">
+  <dl class="cs-meta"><dt>Domain</dt><dd>Healthcare, IoT, AI, Mobile</dd><dt>Role</dt><dd>Sole Designer and Inventor</dd><dt>Year</dt><dd>2020</dd><dt>Recognition</dt><dd>Indian Patent Office, Road to Shine Japan, T-Hub</dd></dl>
+  <div>
+    <h3 class="cs-ch-h3">The Challenge</h3>
+    <p class="cs-ch-p">COVID made hospitals inaccessible. People with respiratory symptoms had no way to self-diagnose. 78% of people surveyed struggled to access respiratory care. 52% could not recognize early symptoms. No affordable home solution existed.</p>
+    <h3 class="cs-ch-h3">The Results</h3>
+    <p class="cs-ch-p">A working AI-powered wearable detecting asthma, bronchitis, and respiratory distress at home. Selected to represent India at T-Hub and Hiroshima Prefecture Japan. Published patent. Government recognition from Telangana State.</p>
   </div>
 </div>
-<div class="cs-imgs">
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/9b7fa3?text=Vest+Prototype&font=lato" alt="Vest"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/9b7fa3?text=App+Start+Screen&font=lato" alt="App"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/9b7fa3?text=Result+Screen&font=lato" alt="Result"></div>
-  <div class="cs-img"><img src="https://placehold.co/600x450/161b22/9b7fa3?text=Road+to+Shine+Japan&font=lato" alt="Japan"></div>
+<div class="cs-metrics-bar">
+  <div class="cs-metrics-row">
+    <div class="cs-metric"><div class="cs-metric-num" style="font-size:28px;letter-spacing:-1px;">Published</div><div class="cs-metric-lbl">Indian Patent Office Journal 32/2020</div></div>
+    <div class="cs-metric"><div class="cs-metric-num">1st</div><div class="cs-metric-lbl">Road to Shine, Hyderabad</div></div>
+    <div class="cs-metric"><div class="cs-metric-num">200+</div><div class="cs-metric-lbl">Users surveyed across India</div></div>
+  </div>
 </div>
-<div class="cs-stack"><h2>Stack</h2><div class="sp-list"><span class="sp">Figma</span><span class="sp">Google ML Kit (Open Source)</span><span class="sp">Android</span><span class="sp">Hardware Prototyping</span><span class="sp">Stethoscope + Microphone</span></div></div>
-<div class="cs-reflect"><div class="rb"><h2>✦ Reflections</h2><p>This is where my design philosophy was born. I didn't have a company behind me, a brief to follow, or a budget to work with. I had a real problem, a 20-year-old's determination, and a belief that the simplest working solution beats the most sophisticated concept. That belief still drives every design decision I make today.</p></div></div>
-<div class="cs-cta"><div class="cs-cta-box"><h2>Let's build something that actually helps people.</h2><p>Open to Senior Product Designer roles. Hyderabad · Hybrid · Remote.</p><a href="mailto:aashrayrajm@gmail.com" class="btn-solid">Contact Me</a></div></div>
-<footer style="position:relative;z-index:1"><p class="footer-copy">© Aashray Raj Mathur 2026</p><div class="footer-links"><a href="https://www.linkedin.com/in/aashray-raj-mathur-1a0838194" target="_blank">LinkedIn</a><a href="mailto:aashrayrajm@gmail.com">Mail</a></div></footer>
+<div class="cs-process">
+  <h2 class="cs-h2">Process</h2>
+  <div class="process-steps">
+    <div class="process-step"><h4 class="step-h4">How It Works</h4><p class="step-p">The vest contains a built-in stethoscope that captures lung sounds. Audio feeds through a microphone into a mobile app running Google's open-source ML model - trained to detect wheezes, crackles, and respiratory patterns. The app surfaces a clear result with plain-language next steps.</p></div>
+    <div class="process-step"><h4 class="step-h4">200+ Surveys</h4><p class="step-p">78% struggled to access care. 65% overly relied on specialists. 52% did not recognize early symptoms - the device needed to catch what users could not.</p></div>
+    <div class="process-step"><h4 class="step-h4">20+ Interviews</h4><p class="step-p">In-person with patients and healthcare professionals. Key insight: people need results they can understand, not medical jargon. Plain, clear, actionable.</p></div>
+    <div class="process-step"><h4 class="step-h4">App Design</h4><p class="step-p">One action per screen. No medical jargon. Colour-coded results with plain-language explanations.<span class="quote-box">No company, no brief, no budget. Just a problem and the determination to solve it with the simplest thing that worked. At 20.</span></p></div>
+  </div>
 </div>
-
+<div class="cs-img-grid">
+  <h2 class="cs-h2">Screens and Prototype</h2>
+  <div class="img-grid-4">
+    <div class="img-cell"><img src="breathe-grid.png" alt="Breath-IN-Vest Screens"><span class="img-lbl">T-Hub Award + App Screen + Research + Japan</span></div>
+    <div class="img-cell"><img src="breathe-4.jpg" alt="T-Hub Award"><span class="img-lbl">T-Hub Award, Hyderabad</span></div>
+    <div class="img-cell"><img src="breathe-2.png" alt="App Start Screen"><span class="img-lbl">App Start Screen</span></div>
+    <div class="img-cell"><img src="breathe-5.png" alt="Road to Shine Japan"><span class="img-lbl">Road to Shine, Japan</span></div>
+  </div>
+</div>
+<div class="cs-stack">
+  <h2 class="cs-h2">Stack</h2>
+  <div class="stack-pills"><span class="stack-pill">Figma</span><span class="stack-pill">Google ML Kit</span><span class="stack-pill">Android</span><span class="stack-pill">Hardware Prototyping</span><span class="stack-pill">Stethoscope and Microphone</span></div>
+</div>
+<div class="cs-reflect"><div class="reflect-card"><p class="reflect-title">Reflections</p><p class="reflect-p">This is where my design philosophy was born. I did not have a company behind me, a brief to follow, or a budget. I had a real problem, a 20-year-old's determination, and a belief that the simplest working solution beats the most sophisticated concept. That belief still drives every decision I make today.</p></div></div>
+<div class="cs-footer-cta"><div class="cta-card"><h2 class="cta-h2">Let's build something that actually helps people.</h2><p class="cta-sub">Open to Senior Product Designer roles. Hyderabad · Hybrid · Remote.</p><a href="mailto:aashrayrajm@gmail.com" class="btn-cta">Contact Me</a></div></div>
+<footer><p class="footer-copy">© Aashray Raj Mathur 2026</p><div class="footer-links"><a href="https://www.linkedin.com/in/aashray-raj-mathur-1a0838194" target="_blank">LinkedIn</a><a href="mailto:aashrayrajm@gmail.com">Mail</a></div></footer>
+</div>
 
 <script>
+// ── Scroll position memory ──
+let savedScrollY = 0;
+
+// ── Case study nav ──
 function showCase(id){
+  savedScrollY = window.scrollY;
   document.getElementById('home-page').style.display='none';
   document.querySelectorAll('.cs-page').forEach(p=>p.classList.remove('active'));
   document.getElementById('case-'+id).classList.add('active');
   window.scrollTo(0,0);
+  history.pushState({case:id}, '', '#'+id);
+  initReveal();
 }
 function hideCase(){
-  document.getElementById('home-page').style.display='block';
   document.querySelectorAll('.cs-page').forEach(p=>p.classList.remove('active'));
-  window.scrollTo(0,0);
+  document.getElementById('home-page').style.display='block';
+  requestAnimationFrame(()=>{ window.scrollTo(0, savedScrollY); });
 }
-document.getElementById('hamburger').addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.toggle('open');
+
+// ── Browser back button ──
+window.addEventListener('popstate', (e)=>{
+  const anyActive = document.querySelector('.cs-page.active');
+  if(anyActive){
+    anyActive.classList.remove('active');
+    document.getElementById('home-page').style.display='block';
+    requestAnimationFrame(()=>{ window.scrollTo(0, savedScrollY); });
+  }
 });
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── Scroll reveal ──
+function initReveal(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:0.08});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+}
+
+// ── Statement scroll fill ──
+function initStatementFill(){
+  const line1 = document.getElementById('stmt-line1');
+  const line2 = document.getElementById('stmt-line2');
+  if(!line1||!line2) return;
+
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        line1.classList.add('animate');
+        setTimeout(()=>{ line2.classList.add('animate'); }, 500);
+        obs.disconnect();
+      }
+    });
+  },{threshold:0.4});
+  obs.observe(line1);
+}
+
+// ── Mindmap ──
+function initMindmap(){
+  const canvas = document.getElementById('mindmapCanvas');
+  const svg = document.getElementById('mindmapSvg');
+  const mobile = document.getElementById('mindmapMobile');
+  if(!canvas||!svg) return;
+
+  const isMobile = window.innerWidth < 769;
+  if(isMobile){
+    canvas.style.display='none';
+    if(mobile) mobile.style.display='block';
+    return;
+  }
+
+  canvas.style.display = 'block';
+  if(mobile) mobile.style.display='none';
+
+  canvas.querySelectorAll('.mindmap-node').forEach(n=>n.remove());
+  svg.innerHTML = '';
+
+  const W = canvas.offsetWidth;
+  const H = 560;
+  const cx = W / 2;
+  const cy = H / 2;
+  canvas.style.height = H + 'px';
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('width', W);
+  svg.setAttribute('height', H);
+
+  // Evenly spaced nodes - angles tuned so no tag overlaps
+  const nodes = [
+    { label:'Research', icon:'🔍', tags:['Field Interviews','Journey Mapping','Contextual Inquiry','Usability Testing'], angle:-90,  dist:220, tagsAlign:'center' },
+    { label:'Product',  icon:'🎯', tags:['End-to-End UX','Wireframes','Prototyping','High-Fidelity'],                  angle:-18,  dist:220, tagsAlign:'left' },
+    { label:'AI Design',icon:'🤖', tags:['Prompt UX','AI Interaction','LLM Features'],                                 angle:54,   dist:220, tagsAlign:'left' },
+    { label:'Systems',  icon:'🧩', tags:['Shadcn UI','Design Tokens','Dev Handoff'],                                   angle:126,  dist:220, tagsAlign:'right' },
+    { label:'Growth',   icon:'📈', tags:['A/B Testing','Landing Pages','GTM Design'],                                  angle:-162, dist:220, tagsAlign:'right' },
+  ];
+
+  // Center node size estimate
+  const centerW = 110;
+  const centerH = 52;
+
+  nodes.forEach(n=>{
+    const rad = n.angle * Math.PI / 180;
+    const nx = cx + n.dist * Math.cos(rad);
+    const ny = cy + n.dist * Math.sin(rad);
+
+    // Line ends 48px before node center (so it stops at edge of label)
+    const endX = nx - Math.cos(rad) * 52;
+    const endY = ny - Math.sin(rad) * 22;
+    // Line starts 36px from center box edge
+    const startX = cx + Math.cos(rad) * (centerW/2 + 4);
+    const startY = cy + Math.sin(rad) * (centerH/2 + 4);
+
+    // Gentle curve control point
+    const midX = (startX + endX)/2 - Math.sin(rad)*30;
+    const midY = (startY + endY)/2 + Math.cos(rad)*30;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d', `M ${startX} ${startY} Q ${midX} ${midY} ${endX} ${endY}`);
+    path.setAttribute('stroke','rgba(61,158,148,0.28)');
+    path.setAttribute('stroke-width','1.5');
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke-dasharray','5 4');
+    svg.appendChild(path);
+
+    // Small dot at line end
+    const dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx', endX);
+    dot.setAttribute('cy', endY);
+    dot.setAttribute('r','2.5');
+    dot.setAttribute('fill','rgba(61,158,148,0.45)');
+    svg.appendChild(dot);
+
+    // Node element
+    const el = document.createElement('div');
+    el.className = 'mindmap-node';
+    el.style.left = (nx/W*100)+'%';
+    el.style.top  = (ny/H*100)+'%';
+
+    const tagHTML = n.tags.map(t=>`<span class="node-tag">${t}</span>`).join('');
+    el.innerHTML = `<div class="node-label"><span class="node-icon">${n.icon}</span>${n.label}</div><div class="node-tags">${tagHTML}</div>`;
+
+    // Align tags based on position
+    const tagsDiv = el.querySelector('.node-tags');
+    if(n.tagsAlign==='left'){  tagsDiv.style.justifyContent='flex-start'; el.style.alignItems='flex-start'; }
+    if(n.tagsAlign==='right'){ tagsDiv.style.justifyContent='flex-end'; el.style.alignItems='flex-end'; }
+    if(n.tagsAlign==='center'){ tagsDiv.style.justifyContent='center'; el.style.alignItems='center'; }
+
+    canvas.appendChild(el);
+  });
+}
+
+// ── Mobile nav ──
+document.addEventListener('DOMContentLoaded',()=>{
+  initReveal();
+  initStatementFill();
+  initMindmap();
+});
+
+let resizeTimer;
+window.addEventListener('resize', ()=>{
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(initMindmap, 150);
+});
 </script>
 </body>
 </html>
