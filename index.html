@@ -67,8 +67,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .tools-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
 .tools-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); white-space: nowrap; }
 .tools-pills { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.tool-pill { font-size: 13px; font-weight: 600; color: var(--text2); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 6px 16px; transition: all 0.2s; }
-.tool-pill:hover { color: var(--text); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.08); }
+.tool-pill { font-size: 13px; font-weight: 600; color: var(--teal2); background: linear-gradient(135deg, rgba(61,158,148,0.12), rgba(91,191,181,0.06)); border: 1px solid rgba(61,158,148,0.2); border-radius: 100px; padding: 6px 16px; transition: all 0.2s; }
+.tool-pill:hover { color: #7dd4cc; background: linear-gradient(135deg, rgba(61,158,148,0.22), rgba(91,191,181,0.12)); border-color: rgba(61,158,148,0.4); }
 
 /* SECTION */
 .section { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 100px 48px; }
@@ -304,6 +304,7 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .section, .mindmap-section { padding: 64px 20px; }
+  #hero { min-height: auto; padding: 80px 24px 48px; }
   .tools-strip { padding: 16px 20px; }
   .work-card { padding: 28px; }
   .card-metrics { gap: 28px; }
@@ -459,14 +460,6 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   </div>
 </div>
 
-<!-- SKILLS -->
-<div class="section reveal" style="padding-top:0">
-  <div class="section-label"><div class="section-dot"></div><span class="section-title">Skills</span></div>
-  <div class="skills-grid">
-    <span class="skill-pill">Field User Research</span><span class="skill-pill">AI Product Design</span><span class="skill-pill">Design Systems</span><span class="skill-pill">UX Strategy</span><span class="skill-pill">Interaction Design</span><span class="skill-pill">Usability Testing</span><span class="skill-pill">Wireframing</span><span class="skill-pill">Prototyping</span><span class="skill-pill">WCAG Accessibility</span><span class="skill-pill">Data Visualization</span><span class="skill-pill">Mobile-First Design</span><span class="skill-pill">A/B Testing</span><span class="skill-pill">Growth Design</span><span class="skill-pill">Dev Collaboration</span><span class="skill-pill">Design Leadership</span><span class="skill-pill">Product Marketing</span><span class="skill-pill">Cross-Cultural Research</span><span class="skill-pill">Prompt UX</span>
-  </div>
-</div>
-
 <!-- EXPERIENCE -->
 <div class="section reveal" style="padding-top:0">
   <div class="section-label"><div class="section-dot"></div><span class="section-title">Experience</span></div>
@@ -495,6 +488,14 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
       <p class="exp-date">May - Aug 2020, Hyderabad</p>
       <p class="exp-note">Designed the Covid-19 Diagnostic System, published in the Indian Patent Office Journal 32/2020. Received government recognition from Telangana State.</p>
     </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section reveal" style="padding-top:0">
+  <div class="section-label"><div class="section-dot"></div><span class="section-title">Skills</span></div>
+  <div class="skills-grid">
+    <span class="skill-pill">Field User Research</span><span class="skill-pill">AI Product Design</span><span class="skill-pill">Design Systems</span><span class="skill-pill">UX Strategy</span><span class="skill-pill">Interaction Design</span><span class="skill-pill">Usability Testing</span><span class="skill-pill">Wireframing</span><span class="skill-pill">Prototyping</span><span class="skill-pill">WCAG Accessibility</span><span class="skill-pill">Data Visualization</span><span class="skill-pill">Mobile-First Design</span><span class="skill-pill">A/B Testing</span><span class="skill-pill">Growth Design</span><span class="skill-pill">Dev Collaboration</span><span class="skill-pill">Design Leadership</span><span class="skill-pill">Product Marketing</span><span class="skill-pill">Cross-Cultural Research</span><span class="skill-pill">Prompt UX</span>
   </div>
 </div>
 
@@ -581,10 +582,10 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 <div class="cs-img-grid">
   <h2 class="cs-h2">Screens</h2>
   <div class="img-grid-4">
-    <div class="img-cell"><img src="inndoc-grid.png" alt="InnDoc Screens"><span class="img-lbl">Contract Document + Prompt Library</span></div>
-    <div class="img-cell"><img src="inndoc-3.png" alt="Contract Document View"><span class="img-lbl">Contract Document View</span></div>
-    <div class="img-cell"><img src="inndoc-4.png" alt="Prompt Library"><span class="img-lbl">Prompt Library</span></div>
-    <div class="img-cell"><img src="inndoc-5.png" alt="AI Chatbot"><span class="img-lbl">AI Chatbot Interface</span></div>
+    <div class="img-cell"><img src="inndoc-grid.png" alt="InnDoc Screens"></div>
+    <div class="img-cell"><img src="inndoc-3.png" alt="Contract Document View"></div>
+    <div class="img-cell"><img src="inndoc-4.png" alt="Prompt Library"></div>
+    <div class="img-cell"><img src="inndoc-5.png" alt="AI Chatbot"></div>
   </div>
 </div>
 <div class="cs-stack">
@@ -636,10 +637,10 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 <div class="cs-img-grid">
   <h2 class="cs-h2">Screens</h2>
   <div class="img-grid-4">
-    <div class="img-cell"><img src="inncircles-1.png" alt="WBS Planning"><span class="img-lbl">Work Breakdown Structure</span></div>
-    <div class="img-cell"><img src="inncircles-2.png" alt="Quality Logs"><span class="img-lbl">Quality Inspection Logs</span></div>
-    <div class="img-cell"><img src="inncircles-3.png" alt="Admin Center"><span class="img-lbl">Admin Center</span></div>
-    <div class="img-cell"><img src="inncircles-4.png" alt="Project Dashboard"><span class="img-lbl">Project Dashboard</span></div>
+    <div class="img-cell"><img src="inncircles-1.png" alt="WBS Planning"></div>
+    <div class="img-cell"><img src="inncircles-2.png" alt="Quality Logs"></div>
+    <div class="img-cell"><img src="inncircles-3.png" alt="Admin Center"></div>
+    <div class="img-cell"><img src="inncircles-4.png" alt="Project Dashboard"></div>
   </div>
 </div>
 <div class="cs-stack">
@@ -691,10 +692,10 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 <div class="cs-img-grid">
   <h2 class="cs-h2">Screens and Prototype</h2>
   <div class="img-grid-4">
-    <div class="img-cell"><img src="breathe-grid.png" alt="Breath-IN-Vest Screens"><span class="img-lbl">T-Hub Award + App Screen + Research + Japan</span></div>
-    <div class="img-cell"><img src="breathe-4.jpg" alt="T-Hub Award"><span class="img-lbl">T-Hub Award, Hyderabad</span></div>
-    <div class="img-cell"><img src="breathe-2.png" alt="App Start Screen"><span class="img-lbl">App Start Screen</span></div>
-    <div class="img-cell"><img src="breathe-5.png" alt="Road to Shine Japan"><span class="img-lbl">Road to Shine, Japan</span></div>
+    <div class="img-cell"><img src="breathe-grid.png" alt="Breath-IN-Vest Screens"></div>
+    <div class="img-cell"><img src="breathe-4.jpg" alt="T-Hub Award"></div>
+    <div class="img-cell"><img src="breathe-2.png" alt="App Start Screen"></div>
+    <div class="img-cell"><img src="breathe-5.png" alt="Road to Shine Japan"></div>
   </div>
 </div>
 <div class="cs-stack">
