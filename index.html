@@ -239,17 +239,23 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, rgba(61,158,148,0.08), rgba(155,127,163,0.06));
-  backdrop-filter: blur(20px);
+  background: linear-gradient(135deg, #1a2535 0%, #0f1a2e 50%, #1a2535 100%);
   border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center; padding: 32px;
 }
 .cs-img-box::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(61,158,148,0.04) 0%, transparent 50%, rgba(155,127,163,0.04) 100%);
-  z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at 30% 50%, rgba(61,158,148,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(155,127,163,0.10) 0%, transparent 60%);
+  z-index: 0; pointer-events: none;
 }
-.cs-img-box img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 0; }
+.cs-img-box img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  position: relative; z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+}
 
 .cs-meta-wrap { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; }
 .cs-meta dt { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
@@ -279,14 +285,24 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 .img-grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .img-cell {
   border-radius: 14px; overflow: hidden; position: relative;
-  background: linear-gradient(135deg, rgba(61,158,148,0.06), rgba(155,127,163,0.04));
+  background: linear-gradient(135deg, #1a2535 0%, #0f1a2e 50%, #1a2535 100%);
   border: 1px solid rgba(255,255,255,0.07);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
   aspect-ratio: 4/3;
   display: flex; flex-direction: column;
 }
-.img-cell img { width: 100%; flex: 1; object-fit: cover; display: block; }
+.img-cell::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(61,158,148,0.10) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(155,127,163,0.08) 0%, transparent 60%);
+  z-index: 0; pointer-events: none;
+}
+.img-cell img {
+  width: calc(100% - 32px); margin: 14px auto 14px;
+  flex: 0 0 auto; object-fit: contain; display: block; max-height: calc(100% - 28px);
+  position: relative; z-index: 1;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
 .img-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text2); padding: 10px 14px; background: rgba(6,6,8,0.7); text-align: center; }
 
 .cs-stack { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
@@ -347,7 +363,7 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
       <li><a href="#faq">FAQ</a></li>
       <li><a href="mailto:aashrayrajm@gmail.com" class="nav-cta">Contact</a></li>
     </ul>
-    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -468,7 +484,7 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
     <div class="exp-item">
       <p class="exp-role">Senior Product Designer - AI and Design Systems</p>
       <p class="exp-company">Inncircles Technologies</p>
-      <p class="exp-date">Aug 2023 - Present</p>
+      <p class="exp-date">Aug 2021 - Present</p>
       <p class="exp-note">Designed InnDoc AI, a full AI document intelligence platform. Built the Shadcn design system from scratch. Only designer selected to fly to the US and onboard $500M+ enterprise clients.</p>
     </div>
     <div class="exp-item">
