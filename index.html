@@ -148,7 +148,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
   position: absolute;
   z-index: 3;
   transform: translate(-50%, -50%);
-  display: block; align-items: center;
+  display: flex; flex-direction: column; align-items: center;
   gap: 8px;
 }
 .node-label {
@@ -282,13 +282,14 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 
 /* CASE STUDY IMAGE GRID - glassmorphism */
 .cs-img-grid { max-width: var(--max); margin: 0 auto; padding: 0 48px 56px; }
-.img-grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; grid-auto-rows: 1fr; }
+.img-grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .img-cell {
   border-radius: 14px; overflow: hidden; position: relative;
   background: linear-gradient(135deg, #1a2535 0%, #0f1a2e 50%, #1a2535 100%);
   border: 1px solid rgba(255,255,255,0.07);
   box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
-  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 4/3;
+  display: flex; flex-direction: column;
 }
 .img-cell::before {
   content: ''; position: absolute; inset: 0;
@@ -296,9 +297,8 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   z-index: 0; pointer-events: none;
 }
 .img-cell img {
-  width: calc(100% - 32px);
-  height: calc(100% - 28px);
-  object-fit: contain; display: block;
+  width: calc(100% - 32px); margin: 14px auto 14px;
+  flex: 0 0 auto; object-fit: contain; display: block; max-height: calc(100% - 28px);
   position: relative; z-index: 1;
   border-radius: 6px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
