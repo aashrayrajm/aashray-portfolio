@@ -345,6 +345,48 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   .img-cell img { width: 100%; height: auto; max-height: none; }
 }
 @media (max-width: 480px) { .hero-h1 { font-size: 36px; letter-spacing: -1px; } }
+
+/* Natural image display - no canvas, no crop */
+.cs-img-natural {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.cs-img-natural img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Single column image stack */
+.img-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.img-stack-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Image caption */
+.cs-img-caption {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border-left: 2px solid rgba(91,191,181,0.5);
+  border-radius: 0 8px 8px 0;
+}
+.cs-img-hero .cs-img-caption {
+  margin-top: 20px;
+}
 </style>
 </head>
 <body>
@@ -570,7 +612,8 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   <p class="cs-subtitle">End-to-end design of an AI document intelligence platform - reducing contract review time by 70% and doubling delivery speed. Solo designer, from research to launch.</p>
 </div>
 <div class="cs-img-hero">
-  <div class="cs-img-box"><img src="inndoc-hero.png" alt="InnDoc AI Platform Overview"></div>
+  <div class="cs-img-natural"><img src="inndoc-1.png" alt="InnDoc AI Platform"></div>
+  <p class="cs-img-caption">This wasn't designed as another AI tool—it was designed around the real needs of construction teams. Through user research, we identified a gap between AI capabilities and user trust. By focusing on role-specific use cases, familiar workflows, and task-oriented experiences, we created an AI platform that helped teams adopt AI naturally within their existing day-to-day processes.</p>
 </div>
 <div class="cs-meta-wrap">
   <dl class="cs-meta"><dt>Industry</dt><dd>Construction Tech / AI SaaS</dd><dt>Role</dt><dd>Lead Designer (Solo)</dd><dt>Duration</dt><dd>Aug 2024 - Feb 2025</dd><dt>Team</dt><dd>1 Business Analyst, 1 Designer (Me)</dd></dl>
@@ -601,11 +644,23 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 </div>
 <div class="cs-img-grid">
   <h2 class="cs-h2">Screens</h2>
-  <div class="img-grid-4">
-    <div class="img-cell"><img src="inndoc-grid.png" alt="InnDoc Screens"></div>
-    <div class="img-cell"><img src="inndoc-3.png" alt="Contract Document View"></div>
-    <div class="img-cell"><img src="inndoc-4.png" alt="Prompt Library"></div>
-    <div class="img-cell"><img src="inndoc-5.png" alt="AI Chatbot"></div>
+  <div class="img-stack">
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inndoc-2.png" alt="AI Dashboards"></div>
+      <p class="cs-img-caption">Research revealed that there was no single dashboard that worked for every construction stakeholder. To solve this, we introduced AI-generated dashboards that transformed complex project data into role-specific views. Users could simply describe what they wanted to see, and the platform generated a tailored dashboard around their specific use case, making insights more accessible, actionable, and trusted.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inndoc-3.png" alt="In-document AI"></div>
+      <p class="cs-img-caption">One of the key insights from research was that users didn't want another AI application—they wanted AI where their work already existed. By integrating AI actions directly into the document workflow, we reduced context switching and enabled teams to access summaries, compliance checks, comparisons, and insights without leaving the document they were working on.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inndoc-4.png" alt="Prompt Library"></div>
+      <p class="cs-img-caption">One of the key patterns we discovered was that users were repeatedly creating similar prompts for recurring construction tasks. To reduce repetition and improve consistency, I designed a Prompt Library that enabled teams to save, organize, and reuse proven prompts across projects. This helped users get reliable AI outputs faster while building a shared knowledge base for the entire organization.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inndoc-5.png" alt="Ask Bob AI Workspace"></div>
+      <p class="cs-img-caption">Rather than building another generic AI chatbot, we designed a construction-focused AI workspace. Research showed that users needed a central place to access AI, manage conversations, reuse prompts, and execute project-specific tasks. Ask Bob became the entry point to the entire AI ecosystem, helping teams adopt AI through familiar workflows and domain-specific experiences.</p>
+    </div>
   </div>
 </div>
 <div class="cs-stack">
@@ -627,7 +682,8 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   <p class="cs-subtitle">Designed the entire Inncircles platform over 5 years - 1000+ screens, a full design system, and a mobile-first field app. The only designer selected to fly to the US and onboard $500M+ enterprise clients.</p>
 </div>
 <div class="cs-img-hero">
-  <div class="cs-img-box"><img src="inncircles-4.png" alt="Inncircles Project Dashboard"></div>
+  <div class="cs-img-natural"><img src="inncircles-1.png" alt="Inncircles Work Logging"></div>
+  <p class="cs-img-caption">A simple change with a measurable impact: reducing work logging to a single action. By replacing complex form-based workflows with tap-to-log interactions and clear status visibility, field teams could update progress in seconds instead of minutes.</p>
 </div>
 <div class="cs-meta-wrap">
   <dl class="cs-meta"><dt>Industry</dt><dd>Construction SaaS</dd><dt>Role</dt><dd>Designer to Product Associate to Senior Designer</dd><dt>Duration</dt><dd>Aug 2021 - Present</dd><dt>Team</dt><dd>Led 6 Designers (Design System)</dd></dl>
@@ -656,11 +712,23 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 </div>
 <div class="cs-img-grid">
   <h2 class="cs-h2">Screens</h2>
-  <div class="img-grid-4">
-    <div class="img-cell"><img src="inncircles-1.png" alt="WBS Planning"></div>
-    <div class="img-cell"><img src="inncircles-2.png" alt="Quality Logs"></div>
-    <div class="img-cell"><img src="inncircles-3.png" alt="Admin Center"></div>
-    <div class="img-cell"><img src="inncircles-4.png" alt="Project Dashboard"></div>
+  <div class="img-stack">
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inncircles-2.png" alt="Research Process"></div>
+      <p class="cs-img-caption">Working closely with the founder, I independently led the end-to-end research process to understand how construction projects were managed on the ground. Through stakeholder interviews, workflow analysis, and field observations, I identified the core operational challenges that became the foundation for the product strategy and design direction.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inncircles-3.png" alt="Stakeholder Interviews"></div>
+      <p class="cs-img-caption">I conducted stakeholder interviews across six key user groups to understand how information moved through a construction project. Mapping their responsibilities and pain points revealed a common theme: teams were spending more time chasing updates than making decisions. These findings directly shaped the product strategy and feature prioritization.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inncircles-4.png" alt="System Architecture"></div>
+      <p class="cs-img-caption">Beyond designing screens, I designed how the system worked. By mapping user roles, workflows, permissions, and data relationships, I created a scalable architecture that connected field operations, project management, and leadership reporting through a unified platform.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="inncircles-5.png" alt="One-click Work Logging"></div>
+      <p class="cs-img-caption">One of the biggest lessons from user research was learning that familiarity doesn't always mean usability. While a chat-based workflow felt intuitive, site teams preferred quick, tap-based interactions over typing updates. This insight led to the creation of a one-click work logging experience that dramatically simplified daily reporting.</p>
+    </div>
   </div>
 </div>
 <div class="cs-stack">
@@ -682,7 +750,8 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
   <p class="cs-subtitle">A wearable AI device that detects lung diseases through breath sounds - built-in stethoscope, Google ML model, mobile app. Built in 2020. Patent published in India.</p>
 </div>
 <div class="cs-img-hero">
-  <div class="cs-img-box"><img src="breathe-1.jpg" alt="Breath-IN-Vest Wearable Device"></div>
+  <div class="cs-img-natural"><img src="breathe-1.png" alt="Breath-IN-Vest Product Ecosystem"></div>
+  <p class="cs-img-caption">What started as a healthcare problem evolved into a complete product ecosystem. I designed and built a wearable respiratory monitoring solution that combined hardware, software, and AI to help users track breathing patterns, identify abnormal respiratory readings, and access actionable respiratory insights. The work resulted in a published patent and became one of my earliest end-to-end product design and innovation projects.</p>
 </div>
 <div class="cs-meta-wrap">
   <dl class="cs-meta"><dt>Domain</dt><dd>Healthcare, IoT, AI, Mobile</dd><dt>Role</dt><dd>Sole Designer and Inventor</dd><dt>Year</dt><dd>2020</dd><dt>Recognition</dt><dd>Indian Patent Office, Road to Shine Japan, T-Hub</dd></dl>
@@ -711,11 +780,23 @@ footer { position: relative; z-index: 1; border-top: 1px solid var(--border); pa
 </div>
 <div class="cs-img-grid">
   <h2 class="cs-h2">Screens and Prototype</h2>
-  <div class="img-grid-4">
-    <div class="img-cell"><img src="breathe-grid.png" alt="Breath-IN-Vest Screens"></div>
-    <div class="img-cell"><img src="breathe-4.jpg" alt="T-Hub Award"></div>
-    <div class="img-cell"><img src="breathe-2.png" alt="App Start Screen"></div>
-    <div class="img-cell"><img src="breathe-5.png" alt="Road to Shine Japan"></div>
+  <div class="img-stack">
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="breathe-2.png" alt="Mobile Application"></div>
+      <p class="cs-img-caption">The wearable device was supported by a mobile application that simplified respiratory analysis for everyday users. The software guided users through the breathing test, processed sensor data, visualized respiratory waveforms, and surfaced easy-to-understand insights about breathing quality and potential abnormalities. My focus was on making complex healthcare data understandable, actionable, and accessible through a simple user experience.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="breathe-3.png" alt="Research and Problem Framing"></div>
+      <p class="cs-img-caption">As part of the Road to Shine innovation program—a collaboration between the Hiroshima Government and T-Hub—I independently conducted research to understand challenges in respiratory healthcare accessibility. Through observations, interviews, and problem framing exercises, I identified a gap between early symptom detection and access to specialist care. These insights led to the concept of Breath-IN-Vest: a wearable and software-enabled solution designed to bring respiratory monitoring closer to users and enable earlier intervention.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="breathe-4.png" alt="Road to Shine First Place Award"></div>
+      <p class="cs-img-caption">Breath-IN-Vest was awarded First Place at the Road to Shine innovation program hosted by the Hiroshima Government (Japan) in collaboration with T-Hub, Hyderabad. The recognition validated the research, product thinking, and end-to-end solution developed to make respiratory healthcare more accessible through a combination of wearable technology, software, and AI.</p>
+    </div>
+    <div class="img-stack-item">
+      <div class="cs-img-natural"><img src="breathe-5.png" alt="International Collaboration Japan"></div>
+      <p class="cs-img-caption">Through the Road to Shine program (Hiroshima Government × T-Hub), I collaborated with mentors and experts from Japan and India to validate the Breath-IN-Vest concept. Presenting the idea to international stakeholders helped refine the research, strengthen the product direction, and ultimately contributed to the project being recognized as the winning solution of the program.</p>
+    </div>
   </div>
 </div>
 <div class="cs-stack">
